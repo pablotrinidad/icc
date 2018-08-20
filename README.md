@@ -10,7 +10,7 @@ de la Facultad de Ciencias de la UNAM.
 * **Ayudante de laboratorio**: José Antonio Vilchis Salazar - *(`grand_paladin@ciencias.unam.mx`)*
 * **Ayudante de teoría**: David Felipe Hernández Chiapa - *(`davfep_96@ciencias.unam.mx`)*
 
-## Horarios
+## Horarios
 
 * **Teoría**: Martes y Jueves - 13:00hrs a 14:30hrs
 * **Laboratorio**: Lunes y Miércoles - 10:00hrs a 12:00hrs
