@@ -44,33 +44,99 @@
 \begin{enumerate}
     \item [Actividad 1.2] {\bfseries Escribe exactamente que archivos fueron creados y donde:\par}
 
-        Dentro de \verb|Reloj/src/icc/practica1| los siguientes archivos fueron creados:
+        Dentro de \texttt{Reloj/src/icc/practica1} los siguientes archivos fueron creados:
         \begin{enumerate}
-            \item [1.] \verb|ClaseReloj.class|
-            \item [2.] \verb|PanelDeReloj.class|
-            \item [3.] \verb|Reloj.class|
-            \item [4.] \verb|TiempoSistema.class|
-            \item [5.] \verb|UsoReloj.class|
-            \item [6.] \verb|VistaReloj.class|
-            \item [7.] \verb|VistaRelojAnalogico.class|
-            \item [8.] \verb|VistaRelojAnalogico$1.class|
+            \item [1.] \texttt{ClaseReloj.class}
+            \item [2.] \texttt{PanelDeReloj.class}
+            \item [3.] \texttt{Reloj.class}
+            \item [4.] \texttt{TiempoSistema.class}
+            \item [5.] \texttt{UsoReloj.class}
+            \item [6.] \texttt{VistaReloj.class}
+            \item [7.] \texttt{VistaRelojAnalogico.class}
+            \item [8.] \texttt{VistaRelojAnalogico\$1.class}
         \end{enumerate}
 
-    \item [Actividad 1.3] {\bfseries Ejecuta \verb|UsoReloj|\par}
+    \item [Actividad 1.3] {\bfseries Ejecuta \texttt{UsoReloj}\par}
             \includegraphics[scale=.3]{assets/img/1-3.png}
 
     \item [Actividad 1.4] {\bfseries Intenta invocar a la máquina virtual con los
-    nombres de otros archivos .class. ¿Qué sucede? Lee lo que devuelve la consola
-    y abre los archivos .java correspon- dientes que necesites. ¿Qué tiene el archivo
-    UsoReloj.java que permite invocarl su .class con java? \par}
+    nombres de otros archivos \texttt{.class}. ¿Qué sucede? Lee lo que devuelve la consola
+    y abre los archivos \texttt{.java} correspondientes que necesites. ¿Qué tiene el archivo
+    \texttt{UsoReloj.java} que permite invocar su \texttt{.class} con java? \par}
 
-        Al tratar de ejecutar otros archivos diferentes a \verb|UsoReloj.class|, Java
-        busca un método principal, \verb|Main method|, que le especifique qué operaciones
+        Al tratar de ejecutar otros archivos diferentes a \texttt{UsoReloj.class}, Java
+        busca un método principal, \texttt{Main method}, que le especifique qué operaciones
         tiene que ejecutar para iniciar. Lo que tiene diferente el archivo
-        \verb|UsdoReloj.java| que permite que la ejecución de la aplicación suceda es la
-        implementación del método \verb|main| en la línea $16$, que además está definido
-        como público, estático y que no regresa ningún valor al terminar la ejecución.
+        \texttt{UsdoReloj.java} que permite que la ejecución de la aplicación suceda es la
+        implementación del método \texttt{main} en la línea $16$, que además está definido
+        como pú blico, estático y que no regresa ningún valor al terminar la ejecución.
 
+    \vfill
+
+    \item [Actividad 1.6] {\bfseries Generar la documentación de \texttt{practica1}. ¿Qué observas? \par}
+
+        Se genearon archivos para servir un sitio web estático como: HTMLs, CSSs y archivos de
+        JavaScript. Al acceder al website de los documentos podemos ver el listado de clases,
+        descripción de cada una de ellas y dentro de cada una sus métodos, atributos, etc.
+
+        El website luce así:
+
+        \includegraphics[scale=.3]{assets/img/1-6.png}
+
+\end{enumerate}
+
+{\Large \bfseries Usando una herammienta auxiliar: ant \par}
+
+Las siguientes respuestas corresponden a las actividades de la \textbf{Práctica 1}
+del Manual de Prácticas de Introducción a las Ciencias de la Computación escrito
+por \textbf{Canek Peláez V.} y \textbf{Elisa}.
+
+\begin{enumerate}
+    \item [Actividad 1.1] {\bfseries Al invocar el comando \texttt{javac} Anota todas las opciones que se pueden pasar al compilador. \par}
+        \begin{itemize}
+            \item \texttt{@<filename>}: Read options and filenames from file
+            \item \texttt{-Akey[=value]}: Options to pass to annotation processors
+            \item \texttt{--add-modules <module>(,<module>)*}: Root modules to resolve in addition to the initial modules, or all modules on the module path if <module> is ALL-MODULE-PATH.
+            \item \texttt{--boot-class-path <path>, -bootclasspath <path>}: Override location of bootstrap class files
+            \item \texttt{--class-path <path>, -classpath <path>, -cp <path>}: Specify where to find user class files and annotation processors
+            \item \texttt{-d <directory>}: Specify where to place generated class files
+            \item \texttt{-deprecation}: Output source locations where deprecated APIs are used
+            \item \texttt{-encoding <encoding>}: Specify character encoding used by source files
+            \item \texttt{-endorseddirs <dirs>}: Override location of endorsed standards path
+            \item \texttt{-extdirs <dirs>}: Override location of installed extensions
+            \item \texttt{-g}: Generate all debugging info
+            \item \texttt{-g: lines,vars,source}: Generate only some debugging info
+            \item \texttt{-g}:none: Generate no debugging info
+            \item \texttt{-h <directory>}: Specify where to place generated native header files
+            \item \texttt{--help, -help}: Print this help message
+            \item \texttt{--help-extra, -X}: Print help on extra options
+            \texttt{-implicit: none,class}: Specify whether or not to generate class files for implicitly referenced \item files
+            \item \texttt{-J<flag>}: Pass <flag> directly to the runtime system
+            \item \texttt{--limit-modules <module>(,<module>)*}: Limit the universe of observable modules
+            \item \texttt{--module <module-name>, -m <module-name>}: Compile only the specified module, check timestamps
+            \item \texttt{--module-path <path>, -p <path>}: Specify where to find application modules
+            \texttt{--module-source-path <module-source-path>}: Specify where to find input source files for multiple \item modules
+            \item \texttt{--module-version <version>}: Specify version of modules that are being compiled
+            \item \texttt{-nowarn}: Generate no warnings
+            \item \texttt{-parameters}: Generate metadata for reflection on method parameters
+            \item \texttt{-proc: none,only}: Control whether annotation processing and/or compilation is done.
+            \texttt{-processor <class1>[,<class2>,<class3>...]}: Names of the annotation processors to run; bypasses \item default discovery process
+            \item \texttt{--processor-module-path <path>}: Specify a module path where to find annotation processors
+            \item \texttt{--processor-path <path>, -processorpath <path>}: Specify where to find annotation processors
+            \item \texttt{-profile <profile>}: Check that API used is available in the specified profile
+            \item \texttt{--release <release>}: Compile for a specific VM version. Supported targets: 10, 6, 7, 8, 9
+            \item \texttt{-s <directory>}: Specify where to place generated source files
+            \item \texttt{-source <release>}: Provide source compatibility with specified release
+            \item \texttt{--source-path <path>, -sourcepath <path>}: Specify where to find input source files
+            \item \texttt{--system <jdk>|none}: Override location of system modules
+            \item \texttt{-target <release>}: Generate class files for specific VM version
+            \item \texttt{--upgrade-module-path <path>}: Override location of upgradeable modules
+            \item \texttt{-verbose}: Output messages about what the compiler is doing
+            \item \texttt{--version, -version}: Version information
+            \item \texttt{-Werror}: Terminate compilation if warnings occur
+        \end{itemize}
+
+    \item [Actividad 1.2] {\bfseries Hola \par}
 \end{enumerate}
 
 
