@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="practica1" default="compile" basedir=".">
+
+  <target name="compile">
+    <mkdir dir="build"/>
+    <javac includeantruntime="false" srcdir="src" destdir="build" debug="true" debuglevel="source" fork="yes"/>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="icc1.practica1.UsoReloj" fork="true">
+      <classpath>
+	<pathelement path="build" />
+      </classpath>
+    </java>
+  </target>
+
+  <target name="doc">
+    <javadoc sourcepath="src" destdir="doc" packagenames="icc1.practica1" />
+  </target>
+
+  <target name="clean">
+    <delete dir="build"/>
+    <delete dir="doc"/>
+  </target>
+
+</project>
