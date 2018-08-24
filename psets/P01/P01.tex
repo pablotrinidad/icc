@@ -42,7 +42,7 @@
 {\Large \bfseries Los programas de la JDK \par}
 
 \begin{enumerate}
-    \item [Actividad 1.2)] {\bfseries Escribe exactamente que archivos fueron creados y donde:\par}
+    \item [Actividad 1.2] {\bfseries Escribe exactamente que archivos fueron creados y donde:\par}
 
         Dentro de \verb|Reloj/src/icc/practica1| los siguientes archivos fueron creados:
         \begin{enumerate}
@@ -56,8 +56,20 @@
             \item [8.] \verb|VistaRelojAnalogico$1.class|
         \end{enumerate}
 
-    \item [Actividad 1.3)] {\bfseries Ejecuta \verb|UsoReloj|\par}
+    \item [Actividad 1.3] {\bfseries Ejecuta \verb|UsoReloj|\par}
             \includegraphics[scale=.3]{assets/img/1-3.png}
+
+    \item [Actividad 1.4] {\bfseries Intenta invocar a la máquina virtual con los
+    nombres de otros archivos .class. ¿Qué sucede? Lee lo que devuelve la consola
+    y abre los archivos .java correspon- dientes que necesites. ¿Qué tiene el archivo
+    UsoReloj.java que permite invocarl su .class con java? \par}
+
+        Al tratar de ejecutar otros archivos diferentes a \verb|UsoReloj.class|, Java
+        busca un método principal, \verb|Main method|, que le especifique qué operaciones
+        tiene que ejecutar para iniciar. Lo que tiene diferente el archivo
+        \verb|UsdoReloj.java| que permite que la ejecución de la aplicación suceda es la
+        implementación del método \verb|main| en la línea $16$, que además está definido
+        como público, estático y que no regresa ningún valor al terminar la ejecución.
 
 \end{enumerate}
 
