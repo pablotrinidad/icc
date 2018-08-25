@@ -7,7 +7,7 @@
   </target>
 
   <target name="run" depends="compile">
-    <java classname="icc1.practica1.UsoReloj" fork="true">
+    <java classname="icc.practica1.UsoReloj" fork="true">
       <classpath>
 	<pathelement path="build" />
       </classpath>
@@ -15,7 +15,7 @@
   </target>
 
   <target name="doc">
-    <javadoc sourcepath="src" destdir="doc" packagenames="icc1.practica1" />
+    <javadoc sourcepath="src" destdir="doc" packagenames="icc.practica1" />
   </target>
 
   <target name="clean">

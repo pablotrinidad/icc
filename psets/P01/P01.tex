@@ -69,14 +69,14 @@
         tiene que ejecutar para iniciar. Lo que tiene diferente el archivo
         \texttt{UsdoReloj.java} que permite que la ejecución de la aplicación suceda es la
         implementación del método \texttt{main} en la línea $16$, que además está definido
-        como pú blico, estático y que no regresa ningún valor al terminar la ejecución.
+        como público, estático y que no regresa ningún valor al terminar la ejecución.
 
     \vfill
 
     \item [Actividad 1.6] {\bfseries Generar la documentación de \texttt{practica1}. ¿Qué observas? \par}
 
         Se genearon archivos para servir un sitio web estático como: HTMLs, CSSs y archivos de
-        JavaScript. Al acceder al website de los documentos podemos ver el listado de clases,
+        \mbox{JavaScript}. Al acceder al website de los documentos podemos ver el listado de clases,
         descripción de cada una de ellas y dentro de cada una sus métodos, atributos, etc.
 
         El website luce así:
@@ -87,9 +87,9 @@
 
 {\Large \bfseries Usando una herammienta auxiliar: ant \par}
 
-Las siguientes respuestas corresponden a las actividades de la \textbf{Práctica 1}
-del Manual de Prácticas de Introducción a las Ciencias de la Computación escrito
-por \textbf{Canek Peláez V.} y \textbf{Elisa}.
+Las siguientes respuestas corresponden a las actividades, ejercicios y preguntas
+de la \textbf{Práctica 1} del Manual de Prácticas de Introducción a las Ciencias
+de la Computación escrito por \textbf{Canek Peláez V.} y \textbf{Elisa Viso G.}.
 
 \begin{enumerate}
     \item [Actividad 1.1] {\bfseries Al invocar el comando \texttt{javac} Anota todas las opciones que se pueden pasar al compilador. \par}
@@ -136,7 +136,81 @@ por \textbf{Canek Peláez V.} y \textbf{Elisa}.
             \item \texttt{-Werror}: Terminate compilation if warnings occur
         \end{itemize}
 
-    \item [Actividad 1.2] {\bfseries Hola \par}
+    \item [Ejercicio 3] {\bfseries Ejecutar \texttt{ant clean} y
+        \texttt{touch src/icc/practica1/UsoReloj.java} y explicar la diferencia
+        de correr \texttt{ant} antes y después de haber sobreescrito \texttt{UsoReloj.java}\par}
+
+        Durante la primera ejecución de \texttt{ant}, la salida del programa decía que
+        estaba compilando 6 archivos fuente mientras que en la segunda ejecución de
+        \texttt{ant} la salida decía que únicamente estaba compilando un archivo:
+
+        \begin{center}
+            \includegraphics[scale=.5]{assets/img/canek-e-3.png}
+        \end{center}
+
+        Este comportamiento se debe a que el archivo \texttt{UsoReloj.java} es
+        el archivo principal que desencadena la ejecución completa de la aplicación
+        y logra esto haciendo uso de los otros 5 archivos restantes.
+
+        Al momento en que nosotros usamos \texttt{touch UsoReloj.java}, el contenido
+        del archivo \texttt{UsoReloj.java} es borrado y queda un archivo vacío. Después,
+        cuando ejecutamos \texttt{ant}, o en su defecto \texttt{javac}, estos inician
+        el proceso de compilación en un sólo archivo (al igual que en el caso previo) pero
+        con la diferencia de que este nuevo, y vacío, archivo nunca hace referencia a
+        los otros 5.
+
+    \item [Pregunta 1] {\bfseries ¿Qué errores encontraste al compilar
+    esta práctica? Explica en qué consisten.\par}
+
+        \begin{itemize}
+            \item \texttt{not a statement}: Que hacía referencia a que una construcción
+                del tipo \texttt{objeto.metodo)} no es correcta y debía ser cambiada por
+                algo del tipo \texttt{objeto.metodo()}.
+
+            \item \texttt{error: 'symbol' expected}: Donde \texttt{symbol} podría ser
+            un \texttt{;}, \texttt{)}, \texttt{(} o cualquier elemtento de la sintaxis
+            de Java que fuera requerido en la expresión formada pero que resultaba faltante
+            o se encontraba sustituido por uno incorrecto.
+
+            \item \texttt{cannot find symbol}: Que significaba que se estaba haciendo
+            uso de una variable que no había sido definida anteriormente. En el ejemplo
+            de la práctica, el error estaba en haber escrito \texttt{relog} en lugar de
+            \texttt{reloj}.
+
+            \item \texttt{method X cannot be applied to given types}: Que significaba que
+            un método de una clase estaba esperando recibir ciertos parámetros de cierto
+            tipo y recibió otros diferentes a los especificados. En el ejemplo de la
+            práctica, el error estaba cuando se llamaba el método \texttt{espera} desde una
+            instancia de la clase \texttt{VistaRelojAnalogico} sin pasarle el entero positivo
+            que el método estaba esperando.
+        \end{itemize}
+
+    \item [Pregunta 2] {\bfseries Los errores que encontraste, ¿de qué tipo crees que sean,
+    sintácticos o semánticos? Justifica tu respuesta. \par}
+
+        Ambos. Sintácticos porque en algunos casos hacían falta símbolos para delimitar
+        el fin de una sentencia (\texttt{;}) o la llamada a un método (\texttt{()}) pero
+        de la misma manera había errores semánticos, es decir, relacionados al significado
+        del contenido escrito. Por ejemplo: Llamar a la variable inexistente \texttt{relog}
+        o ejecutar el método \texttt{espera} de la clase \texttt{VistaRelojAnalogico} sin
+        mandarle los argumentos necesarios para que se ejecutara.
+
+    \item [Pregunta 3] {\bfseries ¿Cuántos archivos en bytecode (los que tienen extensión
+    \texttt{.class}) se generaron?\par}
+
+        8 archivos \texttt{.class}
+
+        \begin{center}
+            \includegraphics[scale=.4]{assets/img/canek-p-3.png}
+        \end{center}
+
+    \item [Pregunta 4] {\bfseries ¿Cuál crees que sea la explicación del comportamiento de
+    Ant después de hacer el ejercicio 3? Justifica tu respuesta.\par}
+
+        Como mencioné en la respuesta al \textbf{Ejercicio 3}, se debe a que el archivo
+        principal del cual parte la compiliación es diferente antes y después de hacer
+        el \texttt{touch}. Antes, el archivo hace uso de los otros 5 mientras que después,
+        el archivo está vacío y no usa ninguna otra clase.
 \end{enumerate}
 
 
