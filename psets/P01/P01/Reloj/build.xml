@@ -9,7 +9,7 @@
   <target name="run" depends="compile">
     <java classname="icc.practica1.UsoReloj" fork="true">
       <classpath>
-	<pathelement path="build" />
+  <pathelement path="build" />
       </classpath>
     </java>
   </target>

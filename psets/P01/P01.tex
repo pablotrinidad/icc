@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{graphicx}
+\usepackage{spverbatim}
 \usepackage{amsmath}
 \usepackage{amssymb}
 
@@ -213,5 +214,56 @@ de la Computación escrito por \textbf{Canek Peláez V.} y \textbf{Elisa Viso G.
         el archivo está vacío y no usa ninguna otra clase.
 \end{enumerate}
 
+{\Large \bfseries Estructura de un programa \par}
+
+\begin{enumerate}
+    \item [Actividad 1.7] {\bfseries Ejecuta el programa \texttt{Entrada}
+    ¿Qué aparece? Ahora, ejecutalo enviando argumentos ¿Qué obtienes?\par}
+
+        En la primera ejecución el programa regresa el mensaje
+        "\texttt{No se recibieron indicaciones.}" y en la segunda ejecución
+        el programa regresó la lista de argumentos enviados precedidos por el
+        mensaje "\texttt{Argumento $n$:}" donde $n$ será el número del argumento $-1$
+
+    \item [Actividad 1.8] {\bfseries Experimenta con el archivo \texttt{Entrada.jav} y
+    reporta lo que hace el programa.\par}
+
+        Ejecutar \texttt{java -jar arg1 arg2 arg3} generará errores ya que el primer
+        argumento después de \texttt{-jar} debe la ubicación del \texttt{jarfile}.
+
+        Agregando el argumento \texttt{Entrada.jar} entre \texttt{-jar} y el listado
+        de argumentos \texttt{arg1 arg2 arg3} el comando se ejecuta de manera correct
+        y podemos observar el mismo comportamiento de listado de argumentos que se
+        describe en la \textbf{Actividad 1.7}.
+
+        \begin{center}
+            \includegraphics[scale=.5]{assets/img/1-8.png}
+        \end{center}
+
+    \item [Actividad 1.10] {\bfseries Lee los dos archivos \texttt{build.xml}
+    utilizados en esta práctica y observa en qué se parecen y en qué difieren.
+    ¿Qué objetivos reconoce cada archivo? ¿Qué pasos ejecutará cada uno de los
+    objetivos (observa el atributo llamado \texttt{depends})?\par}
+
+        Se parecen en que ambos tienen la misma estructura de tags.
+        Por ejemplo, ambos comparten las etiquetas \texttt{xml} y \texttt{project}.
+        Además, ambos tienen \texttt{targets} definidos que permiten compilar,
+        correr, limpiar y generar la documentación del proyecto.
+
+        Difieren en que el \texttt{XML} del programa \texttt{Entrada} define
+        más propiedades usando el tag \texttt{propery} mientras que la clase del
+        reloj no lo hace. También, se define un \texttt{target} adicional en
+        \texttt{Entrada} para distribuir el paquete. Existen más comentarios para
+        el \texttt{XML} de \texttt{Entrada} y de la misma manera la tarea default
+        está definida como la sucesión de \texttt{clean, build y dist}.
+
+        Cada XML apunta a su resprectivo proyecto y cada target "\texttt{paso}"
+        difiere ligeramente de otro.
+
+        Acerca de los \texttt{depends}, especifican que \texttt{target} tiene
+        que ser ejecutado antes de que ese puede correr. Por ejemplo, \texttt{run}
+        requiere que \texttt{compile} suceda antes.
+
+\end{enumerate}
 
 \end{document}
