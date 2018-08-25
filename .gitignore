@@ -276,3 +276,6 @@ TSWLatexianTemp*
 
 # OS X
 .DS_Store
+
+# Builds
+trinidadpablo.tar.gz
