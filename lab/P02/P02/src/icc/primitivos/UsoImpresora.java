@@ -7,8 +7,6 @@
 
 package icc.primitivos;
 
-import icc.primitivos.ImpresoraBinario;
-
 public class UsoImpresora {
 
     // Main method
@@ -21,8 +19,8 @@ public class UsoImpresora {
 
         // Itera en los enteros desde 0 hasta 31
         for (int i = 0; i < 32; i++) {
-            // Imprime el entero y una tabulación sin terminar con nueva línea
-            System.out.print(Integer.toString(i) + "\t");
+            // Imprime el entero y una tabulación
+            System.out.print(i + "\t");
 
             // Imprime la representación en binario usando "impresora"
             impresora.imprime(i);
