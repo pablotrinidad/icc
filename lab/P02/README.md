@@ -20,3 +20,7 @@ el script realizar lo siguiente:
 * **`P02`** es el folder con el resultado de extraer el archivo e incluye
 un archivo con el ejemplo de uso de la clase `ImpresoraBinario`
 * **`PO2/src/icc/primitivos/UsoImpresora.java`**: Archivo de ejemplo
+
+## Recursos
+
+* **[Java primitive data types (official docs)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html**
