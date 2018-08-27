@@ -12,7 +12,7 @@ de las clases seguido de la ejecución del programa. Para correr
 el script realizar lo siguiente:
 
 1. `$ chmod +x run.sh` Habilita el archivo `run` como ejecutable
-2. `$ ./run` Compila y corre el programa.
+2. `$ ./run.sh` Compila y corre el programa.
 
 ## Contenido del folder
 
