@@ -41,6 +41,12 @@ public class Actividades {
         double negativeZero = -0.0;
         System.out.print(negativeZero + "\t\t");
         printer.imprime(negativeZero);
+
+        // 2.3
+        System.out.println("\n\n====== Actividad 2.3 ======");
+        int permisos = Integer.parseInt("0754", 8);
+        printer.imprime(permisos);
+        System.out.println(permisos);
     }
 
 }

@@ -89,4 +89,22 @@ dentro de la descripción de la práctica.} valores especiales.
         \end{tabular}
     \end{center}
 
+\textbf{Actividad 2.3} Imprime como se ve esto en binario ¿Cuánto vale \texttt{permisos}
+en base 10? (Sólo mándalo a imprimir \texttt{Java} tabaja por defecto en base 10) \\
+
+    El código:
+
+    \begin{minted}[fontsize=\footnotesize,baselinestretch=1,gobble=8]{java}
+        ImpresoraBinario printer = new ImpresoraBinario();
+        int permisos = Integer.parseInt("0754", 8);
+        printer.imprime(permisos);
+        System.out.println(permisos);
+    \end{minted}
+
+    Genera la salida:
+    \begin{verbatim}
+111101100
+492
+    \end{verbatim}
+
 \end{document}
