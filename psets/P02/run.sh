@@ -11,6 +11,6 @@ rm -rf icc/primitivos/*.class
 javac icc/primitivos/*.java
 
 # Run executable
-java icc.primitivos.Actividades
+java icc.primitivos.PruebasPrimitivos
 
 cd ../../
