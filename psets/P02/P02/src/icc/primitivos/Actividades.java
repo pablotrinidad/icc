@@ -71,6 +71,18 @@ public class Actividades {
         printer.imprime(permissions_b10 >>> 1);
         System.out.print(">>> 3: ");
         printer.imprime(permissions_b10 >>> 3);
+
+        // 2.5
+        System.out.println("\n\n====== Actividad 2.5 ======");
+        System.out.print("Original value: ");
+        printer.imprime(permissions_b10);
+
+        int write_permissions = 0222;
+        System.out.print("Write permissions: ");
+        printer.imprime(write_permissions);
+
+        System.out.print("New permission (original OR write): ");
+        printer.imprime(permissions_b10 | write_permissions);
     }
 
 }
