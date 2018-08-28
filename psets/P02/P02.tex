@@ -1,0 +1,76 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{minted}
+
+\usemintedstyle{pastie}
+\definecolor{MBckg}{HTML}{272822}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+
+    {\scshape\LARGE Universidad Nacional Autónoma de México \par}
+
+    \vspace{1cm}
+    {\scshape\Large Facultad de Ciencias\par}
+    \vspace{1.5cm}
+
+    \begin{center}
+        \includegraphics[scale=.1]{../../assets/img/logo.png}
+    \end{center}
+
+    \vspace{.8 cm}
+
+    {\LARGE Práctica 02: \par}
+    {\huge\bfseries Tipos primitivos y bits \par}
+
+    \vspace{0.5cm}
+    {\large\itshape Pablo A. Trinidad Paz\par}
+
+    \vfill
+
+    Trabajo presentado como parte del curso de \textbf{Introducción a Ciencias de la Computación}
+    impartido por la profesora \textbf{Verónica Esther Arriola Ríos}. \par
+    \vspace{0.1cm}
+    {\large 27 de agosto de 2018\par}
+\end{titlepage}
+
+\textbf{Actividad 2.1} Revisa la documentación de las clases \texttt{Byte},
+\texttt{Short}, \texttt{Integer} y \texttt{Long} de \texttt{Java} y revisa
+los atributos de clase que permiten acceder a esta información
+\textbf{a)} ¿Cuáles encuentras relevantes? \\
+
+Intenta sumarle uno a \texttt{max}, imprime el resultado en base 10 y su
+representación en binario. \textbf{b)} Explica qué pasó.
+
+\begin{enumerate}
+    \item[a)] Todos los considero relevantes excepto por \texttt{TYPE} y \texttt{BYTES}
+    porque creo que son muy redundantes. Respecto a \texttt{BYTES}, ya contamos con
+    \texttt{SIZE} el cual menciona el número de bits y respecto a \texttt{TYPE} pues
+    también siento muy redundante preguntar de qué clase viene el número si cuando
+    lo inicializamos ya lo decimos explicitamente, por ejemplo:
+        \begin{minted}[fontsize=\footnotesize,baselinestretch=1,gobble=8]{java}
+            double n = Double.MAX_VALUE;
+            n.TYPE; // <--- ¿?
+        \end{minted}
+
+    \item[b)] El valor de \texttt{max} es $2147483647_{10}$ en base 10 el cuál es equivalente
+    a 31 $1s$ precedidos por un $0$ en base 2 ($01111111111111111111111111111111_2$)
+    donde el $0$ indica que se trata de un entero positivo y al mismo tiempo se hace uso
+    de los 32 bits. Al momento de sumar 1 al valor de \texttt{max}, la representación
+    resultante en base 2 se vuelve $10000000000000000000000000000000_2$ la cuál es
+    interpretada dentro de Java como un entero negativo debido a que el primer dígito
+    indica el signo, y a su vez, el valor de \texttt{max} es equivalente a $-2147483648_{10}$
+    en base 10.
+\end{enumerate}
+
+\end{document}
