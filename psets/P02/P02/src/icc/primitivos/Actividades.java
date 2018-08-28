@@ -44,9 +44,33 @@ public class Actividades {
 
         // 2.3
         System.out.println("\n\n====== Actividad 2.3 ======");
-        int permisos = Integer.parseInt("0754", 8);
-        printer.imprime(permisos);
-        System.out.println(permisos);
+        System.out.println("Permissions: rwx r-x r--");
+        String permissions_b8 = "0754";
+        int permissions_b10 = Integer.parseInt(permissions_b8, 8);
+        System.out.println("Base 8: " + permissions_b8);
+        System.out.println("Base 10: " + permissions_b10);
+        System.out.print("Base 2: ");
+        printer.imprime(permissions_b10);
+
+        // 2.4
+        System.out.println("\n\n====== Actividad 2.4 ======");
+        System.out.print("Original value: ");
+        printer.imprime(permissions_b10);
+
+        System.out.print("\n<< 1: ");
+        printer.imprime(permissions_b10 << 1);
+        System.out.print("<< 3: ");
+        printer.imprime(permissions_b10 << 3);
+
+        System.out.print("\n>> 1: ");
+        printer.imprime(permissions_b10 >> 1);
+        System.out.print(">> 3: ");
+        printer.imprime(permissions_b10 >> 3);
+
+        System.out.print("\n>>> 1: ");
+        printer.imprime(permissions_b10 >>> 1);
+        System.out.print(">>> 3: ");
+        printer.imprime(permissions_b10 >>> 3);
     }
 
 }

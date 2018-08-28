@@ -107,4 +107,48 @@ en base 10? (Sólo mándalo a imprimir \texttt{Java} tabaja por defecto en base 
 492
     \end{verbatim}
 
+\textbf{Actividad 2.4} Realiza pruebas con los operadores de corrimiento $<<$, $>>$ y $>>>$.
+Recorre los números del inciso anterior por uno y tres bits. \\
+
+    El código:
+
+    \begin{minted}[fontsize=\footnotesize,baselinestretch=1,gobble=8]{java}
+        System.out.println("\n\n====== Actividad 2.4 ======");
+
+        ImpresoraBinario printer = new ImpresoraBinario();
+        int permissions_b10 = Integer.parseInt("0754", 8);
+
+        System.out.print("Original value: ");
+        printer.imprime(permissions_b10);
+
+        System.out.print("\n<< 1: ");
+        printer.imprime(permissions_b10 << 1);
+        System.out.print("<< 3: ");
+        printer.imprime(permissions_b10 << 3);
+
+        System.out.print("\n>> 1: ");
+        printer.imprime(permissions_b10 >> 1);
+        System.out.print(">> 3: ");
+        printer.imprime(permissions_b10 >> 3);
+
+        System.out.print("\n>>> 1: ");
+        printer.imprime(permissions_b10 >>> 1);
+        System.out.print(">>> 3: ");
+        printer.imprime(permissions_b10 >>> 3);
+    \end{minted}
+
+    Genera la salida:
+    \begin{verbatim}
+====== Actividad 2.4 ======
+Original value: 111101100
+
+<< 1: 1111011000
+<< 3: 111101100000
+
+>> 1: 11110110
+>> 3: 111101
+
+>>> 1: 11110110
+>>> 3: 111101
+    \end{verbatim}
 \end{document}
