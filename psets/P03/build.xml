@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="p03" default="compile" basedir=".">
+
+  <target name="compile">
+    <mkdir dir="build"/>
+    <javac
+      srcdir="src"
+      destdir="build"
+      debug="true"
+      debuglevel="source"
+      includeantruntime="false"
+    />
+  </target>
+
+  <target name="run" depends="compile">
+    <java
+      classname="icc.p03.Prueba"
+      fork="true"
+    >
+      <classpath>
+        <pathelement path="build" />
+      </classpath>
+    </java>
+  </target>
+
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+
+</project>
