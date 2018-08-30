@@ -12,10 +12,10 @@ punto anterior.
 * **src** contiene el código fuente de la práctica.
 * **build.xml** contiene la especificación necesaria para habilitar comandos de
 **ant** que permitan la construcción, ejecución y generación de la documentación.
- * `ant compile`
- * `ant run`
- * `ant doc`
- * `ant clean`
+    * `ant compile`
+    * `ant run`
+    * `ant doc`
+    * `ant clean`
 * **build.sh** script de bash con las sentencias para construid el entregable de
 la práctica.
 * **readme.txt** archivo requerido como parte de la entrega.
