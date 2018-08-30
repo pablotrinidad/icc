@@ -5,7 +5,13 @@
 
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 
+\usepackage{xcolor}
+\usepackage{color}
 \usepackage{graphicx}
+\usepackage{minted}
+
+\usemintedstyle{pastie}
+\definecolor{MBckg}{HTML}{272822}
 
 \begin{document}
 
@@ -29,20 +35,53 @@
 
     \vspace{0.5cm}
     {\large\itshape Pablo A. Trinidad Paz\par}
+    419004279
 
     \vfill
 
     Trabajo presentado como parte del curso de \textbf{Introducción a Ciencias de la Computación}
-    impartido por la profesora \tex tbf{Verónica Esther Arriola Ríos}. \par
+    impartido por la profesora \textbf{Verónica Esther Arriola Ríos}. \par
     \vspace{0.1cm}
     {\large 29 de agosto de 2018\par}
 \end{titlepage}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{enumerate}
+    \item ¿Crees que sea posible asignar el valor de un flotante a un entero?
+    ¿Cómo crees que funcionaría?
+
+        Si creo que es posible pero debido la misma definición de un número decimal
+        dentro de las matemáticas, si la parte decimal es diferente de 0, entonces
+        tendría que haber una operación que decida hacer con ella, por ejemplo, redondear
+        hacia el siguiente entero, o sólo redondear si el valor excede .5, etc.
+
+    \item Observa el siguiente código:
+    \begin{minted}[fontsize=\footnotesize,baselinestretch=1,gobble=8,linenos]{java}
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        (a > 3 && ++a <=2) ? b++ : c--;
+    \end{minted}
+    Sin compilarlo, ¿cuál es el valor final de $a$, $b$ y $c$? Compila y compara
+    lo que pensaste con el resultado real. Explica por que cada variable termina
+    con el valor que termina.
+
+        \begin{enumerate}
+            \item ¿Cuál es el valor final de $a$, $b$ y $c$?
+                \begin{itemize}
+                    \item $a$ = 1
+                    \item $b$ = 2
+                    \item $c$ = 2
+                \end{itemize}
+            \item Explica los valores de cada variable
+                \begin{itemize}
+                    \item $a$ vale 1 debido a que su valor no es alterado
+                    \item $b$ vale 2 debido a que su valor nunca es alterado
+                    ya que la condición no se cumplió.
+                    \item $c$ vale 3 debido a que la condición se cumplió y
+                    su valor sufrió un decremento por 1.
+                \end{itemize}
+        \end{enumerate}
+
+\end{enumerate}
 
 \end{document}

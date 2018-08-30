@@ -25,6 +25,11 @@
 
   <target name="clean">
     <delete dir="build"/>
+    <delete dir="doc"/>
+  </target>
+
+  <target name="doc">
+    <javadoc sourcepath="src/" destdir="doc" packagenames="icc.p03" />
   </target>
 
 </project>
