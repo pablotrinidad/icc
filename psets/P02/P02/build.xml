@@ -2,7 +2,7 @@
 <project name="TiposPrimitivos" default="compile" basedir=".">
 
 	<!-- Escribe aquí el nombre de la clase con tu método main -->
-	<property name="mainclass" value="Prueba"/>
+	<property name="mainclass" value="PruebasPrimitivos"/>
 	<property name="pck"       value="primitivos"/>
 
 	<property name="src"   location="src"/>
