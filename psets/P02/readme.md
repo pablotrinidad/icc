@@ -6,7 +6,7 @@ del **Manual de Prácticas 2018-I** escrito por *Verónica E. Arriola-Ríos.*
 ## Contenido
 
 * **PSet Description.pdf** contiene el PDF con las instrucciones de la práctica.
-* **P01** contiene el código fuente de la práctica.
+* **P02** contiene el código fuente de la práctica.
 * **P02.pdf** es el archivo con las respuestas a los ejercicios, actividades
 y preguntas de la práctica.
 * **P02.tex** es el código fuente en LaTeX utilizado para generar el PDF del
