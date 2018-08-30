@@ -16,7 +16,7 @@ punto anterior.
     * `ant run`
     * `ant doc`
     * `ant clean`
-* **build.sh** script de bash con las sentencias para construid el entregable de
+* **build.sh** script de bash con las sentencias para construir el entregable de
 la práctica.
 * **readme.txt** archivo requerido como parte de la entrega.
 
