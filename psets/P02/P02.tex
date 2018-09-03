@@ -44,6 +44,8 @@
     {\large 27 de agosto de 2018\par}
 \end{titlepage}
 
+{\LARGE Actividades \par}
+
 \textbf{Actividad 2.1} Revisa la documentación de las clases \texttt{Byte},
 \texttt{Short}, \texttt{Integer} y \texttt{Long} de \texttt{Java} y revisa
 los atributos de clase que permiten acceder a esta información
@@ -190,5 +192,54 @@ Write permissions: 10010010
 New permission (original OR write): 111111110
     \end{verbatim}
 
+{\LARGE Ejercicios \par}
+
+\textbf{Ejercicio 1} Almacena el valor \textbf{456} en diferentes tipos primitivos,
+muestra su representación binaria y explica las diferencias que observas. \\
+
+    \begin{center}
+        \includegraphics[scale=.7]{assets/img/e-1.png}
+    \end{center}
+
+    La diferencia más obvia es la cantidad de bits que utiliza cada tipo de dato aunque
+    rápidamente podemos encontrar la similitud de que el valor \textbf{111001000} siempre
+    forma parte de la representación binaria. También se puede distinguir que el tamaño
+    de la matiza de un double aumenta.\\
+
+\textbf{Ejercicio 2} Repite los mismos pasos del ejercicio anterior, pero ahora con \textbf{-456}.
+
+    \begin{center}
+        \includegraphics[scale=.7]{assets/img/e-2.png}
+    \end{center}
+
+    En esta ocasión los primeros bits de \texttt{int} y \texttt{long} ya son usa dos y
+    los flotantes cambian los primeros valores de la parte del exponent a 1.\\
+
+\textbf{Ejercicio 3} Repite los mismos pasos pero con -456.601. Ojo, en este caso deberás
+hacer un casting para guardar el número en los tipos correspondientes a enteros y perderás
+la parte fraccionaria. ¿Qué número queda almacenado?
+
+    \begin{center}
+        \includegraphics[scale=.7]{assets/img/e-3.png}
+    \end{center}
+
+    El número almacenado es 457 debido a que hace un redondeo del valor decimal.\\
+
+\textbf{Ejercicio 4} Finalmente, crea un \texttt{int} llamada \texttt{mascara} cuyos
+últimos dígitos sean $1s$. Ahora utiliza el operador de corrimiento necesario para
+colocarlos en las posiciones 4 a la 7 (contando de derecha a izquierda). ¿Qué número
+obtienes?
+
+    \begin{center}
+        \includegraphics[scale=.7]{assets/img/e-4.png}
+    \end{center}
+
+\textbf{Ejercicio 5} Dado un \texttt{int num = 1408}, realiza la operación \texttt{num \& mascara}.
+Imprime los bits resultantes y el valor numérico del resultado. Repite el ejerciio con \texttt{|}
+y \texttt{$\sim$}.
+
+    \begin{center}
+        \includegraphics[scale=.8]{assets/img/e-5.png}
+    \end{center}
 
 \end{document}
