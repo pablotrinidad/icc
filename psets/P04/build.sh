@@ -7,6 +7,7 @@ mkdir $DIR_NAME
 
 # Copy files to dir
 cp -r src $DIR_NAME/
+cp build.xml $DIR_NAME/
 cp readme.txt $DIR_NAME/
 cp run.sh $DIR_NAME/
 cp input.txt $DIR_NAME/
