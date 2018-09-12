@@ -1,0 +1,45 @@
+<project>
+
+    <!-- Project properties -->
+    <property name="package_name" value="icc.recursion" />
+    <property name="class_name" value="Euclides" />
+
+    <property name="src_dir" value="src" />
+    <property name="build_dir" value="build" />
+    <property name="docs_dir" value="docs" />
+    <!-- Project properties -->
+
+    <target name="default" depends="clean,compile,run"></target>
+
+    <target name="compile">
+        <mkdir dir="${build_dir}" />
+        <javac
+            srcdir="${src_dir}" destdir="${build_dir}"
+            debug="true" debuglevel="source"
+            fork="yes" includeantruntime="false"
+        />
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${package_name}.${class_name}" fork="true">
+            <classpath>
+                <pathelement path="build" />
+            </classpath>
+            <arg line="${args}"/>
+        </java>
+    </target>
+
+    <target name="doc">
+        <javadoc
+            sourcepath="${src_dir}"
+            destdir="${docs_dir}"
+            packagenames="${package_name}"
+        />
+    </target>
+
+    <target name="clean">
+        <delete dir="${build_dir}" />
+        <delete dir="${docs_dir}" />
+    </target>
+
+</project>
