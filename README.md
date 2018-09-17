@@ -20,3 +20,8 @@ de la Facultad de Ciencias de la UNAM.
 ## Recursos
 
 * **[Google site](https://sites.google.com/ciencias.unam.mx/icc/p%C3%A1gina-principal)**
+
+## Contribuyentes
+
+* *@pablotrinidad*: Pablo Trinidad - (pablotrinidad@ciencias.unam.mx)
+* *@diegojardonc*: Diego Jardón - (diegojardon@ciencias.unam.mx)
