@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Contactos" default="run" basedir=".">
+
+  <target name="compile">
+    <mkdir dir="build"/>
+    <javac srcdir="src" destdir="build" debug="true" debuglevel="source" />
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="icc.contactos.IUContactos" fork="true">
+      <classpath>
+	<pathelement path="build" />
+      </classpath>
+    </java>
+  </target>
+
+  <target name="docs">
+    <javadoc sourcepath="src" destdir="docs" packagenames="icc.contactos" />
+  </target>
+
+  <target name="clean">
+    <delete dir="build"/>
+    <delete dir="docs"/>
+  </target>
+
+</project>
