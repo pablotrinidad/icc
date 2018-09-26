@@ -7,9 +7,9 @@ import java.util.Scanner;
  * @author blackzafiro
  */
 public class IUContactos {
-	private Scanner scanner;
-	private Contactos contactos;
-    
+    private Scanner scanner;
+    private Contactos contactos;
+
     /**
      * Crea la interfaz de usuario para manejar un plantío con magueyes, cempohualxochitl y rosas.
      */
@@ -17,14 +17,14 @@ public class IUContactos {
         scanner = new Scanner(System.in);
         contactos = new Contactos();
     }
-	
-	/**
+
+    /**
      * Pide un número al usuario.
      * @param mensaje
-     * @return 
+     * @return
      */
     private int leeEntero(String mensaje) {
-        System.out.println(mensaje);
+        System.out.print(mensaje);
         boolean error = false;
         int num = -1;
         try {
@@ -42,25 +42,31 @@ public class IUContactos {
         }
         return num;
     }
-    
-	/**
-	 * Pide al usuario los datos del contacto nuevo y devuelve un registro con
-	 * ellos.
-	 * @return 
-	 */
+
+    /**
+     * Pide al usuario los datos del contacto nuevo y devuelve un registro con
+     * ellos.
+     * @return
+     */
     private Registro solicitaDatosDeContacto() {
-		System.out.println("Dame los datos del nuevo contacto...");
-		System.out.println("Nombre: ");
-		String nombre = scanner.nextLine();
-		// Utiliza el scanner para leer los datos que faltan y, si es necesario,
-		// conviértelos a los tipos que requiere tu clase Registro.
-		// ??? direccion = ..
-		// ??? telefono = ...
-		
-		Registro nuevo = new Registro(nombre, direccion, telefono);
-		return nuevo;
+        System.out.println("Dame los datos del nuevo contacto...");
+
+        // Recibe el nombre
+        System.out.print("Nombre: ");
+        String nombre = scanner.nextLine();
+
+        // Recibe el nombre
+        System.out.print("Dirección: ");
+        String direccion = scanner.nextLine();
+
+        // Recibe el teléfono
+        System.out.print("Teléfono: ");
+        String telefono = scanner.nextLine();
+
+        Registro nuevo = new Registro(nombre, direccion, telefono);
+        return nuevo;
     }
-    
+
     /**
      * Método auxiliar para imprimir el menú para el usuario.
      */
@@ -71,41 +77,41 @@ public class IUContactos {
         System.out.println("3) Imprimir lista de contactos");
         System.out.println("4) Salir");
     }
-    
+
     public void corre() {
         System.out.println(" *** Lista de contactos *** ");
         boolean continuar = true;
         while(continuar) {
             imprimeMenu();
-            int opcion = leeEntero("Selecciona una opción:");
+            int opcion = leeEntero("Selecciona una opción: ");
             switch(opcion) {
                 case 1:
-					Registro reg = solicitaDatosDeContacto();
-					contactos.insertaContacto(reg);
-					break;
+                    Registro reg = solicitaDatosDeContacto();
+                    contactos.insertaContacto(reg);
+                    break;
                 case 2:
-					System.out.println("Escribe el nombre del contacto que buscas:");
-					String pista = scanner.nextLine();
-					Registro reg = contactos.consultar(pista);
-					if(reg == null) {
-						System.out.println("No se encontró ningún registro con nombre " + pista);
-					} else {
-						System.out.println("Se encontró a:");
-						System.out.println(reg.toString());
-					}
-					break;
+                    System.out.println("Escribe el nombre del contacto que buscas:");
+                    String pista = scanner.nextLine();
+                    reg = contactos.consultar(pista);
+                    if(reg == null) {
+                        System.out.println("No se encontró ningún registro con nombre " + pista);
+                    } else {
+                        System.out.println("Se encontró a:");
+                        System.out.println(reg.toString());
+                    }
+                    break;
                 case 3:
-					contactos.imprimeContactos();
-					break;
+                    contactos.imprimeContactos();
+                    break;
                 case 4:
                     continuar = false;
-					break;
+                    break;
                 default:
                     System.out.println("Esa no es una opción válida del menú.");
             }
         }
     }
-    
+
     public static void main(String[] args) {
         IUContactos interfaz = new IUContactos();
         interfaz.corre();
