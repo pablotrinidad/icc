@@ -26,47 +26,29 @@ public class Contactos {
             String currentName, newName, shortestName;
             Boolean sorted = false;
 
-            // Itera mientras haya un siguiente contacto y los link no estén ordenados
+            // Itera mientras haya un siguiente contacto y los links no estén ordenados
             while (currentContact != null && sorted == false) {
                 currentName = currentContact.getNombre();
                 newName = newContact.getNombre();
-                shortestName = currentName.length() > newName.length() ? newName : currentName;
 
-                /* Itera en las letras de la cadena más corta
-                * Se hace por las cadenas que repitan caracteres, por ejemplo:
-                * "Aaron" y "Angel" o "Luis Alberto" y "Luis Enrique"
-                */
-                for (int i = 0; i < shortestName.length(); i++) {
-                    Character cChar = Character.toUpperCase(currentName.charAt(i));
-                    Character nChar = Character.toUpperCase(newName.charAt(i));
-
-                    if (cChar > nChar) {
-                        if (lastContact == null) {
-                            this.head = newContact;
-                            newContact.setSiguiente(currentContact);
-                        } else {
-                            lastContact.setSiguiente(newContact);
-                            newContact.setSiguiente(currentContact);
-                        }
-                        sorted = true;
-                        break;
+                if (currentName.compareToIgnoreCase(newName) > 0) {
+                    if (lastContact == null) { // Hay sólo un elemento en la lista
+                        this.head = newContact;
+                    } else { // Hay múltiples elementos en la lista
+                        lastContact.setSiguiente(newContact);
                     }
-                    else if (cChar < nChar) {
-                        if (currentContact.getSiguiente() == null) {
-                            currentContact.setSiguiente(newContact);
-                            sorted = true;
-                        }
-                        break;
+
+                    newContact.setSiguiente(currentContact);
+                    sorted = true;
+                } else {
+                    if (currentContact.getSiguiente() == null) { // Se llegó al final de la lista
+                        currentContact.setSiguiente(newContact);
+                        sorted = true;
                     }
                 }
+
                 lastContact = currentContact;
                 currentContact = currentContact.getSiguiente();
-            }
-            if (lastContact != null) {
-                if (lastContact.getSiguiente() != newContact && newContact.getSiguiente() == null) {
-                    lastContact.setSiguiente(newContact);
-                    newContact.setSiguiente(currentContact);
-                }
             }
         }
     }
