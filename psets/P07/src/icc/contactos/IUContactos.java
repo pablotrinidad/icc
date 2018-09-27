@@ -90,12 +90,16 @@ public class IUContactos {
                     contactos.insertaContacto(reg);
                     break;
                 case 2:
-                    System.out.println("Escribe el nombre del contacto que buscas:");
+                    System.out.print("Escribe el nombre del contacto que buscas:");
                     String pista = scanner.nextLine();
                     reg = contactos.consultar(pista);
                     if(reg == null) {
                         System.out.println("No se encontró ningún registro con nombre " + pista);
                     } else {
+                        System.out.println(
+                            String.join("\t|\t", "Nombre", "Teléfono", "Dirección") + "\n" +
+                            "=================================================="
+                        );
                         System.out.println("Se encontró a:");
                         System.out.println(reg.toString());
                     }

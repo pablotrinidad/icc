@@ -9,9 +9,7 @@ package icc.contactos;
 
 public class Registro {
 
-    public String nombre = "Default contact name";
-    public String direccion = "Default contact address";
-    public String telefono = "+XX XX XXXX XXXX";
+    public String nombre, direccion, telefono;
 
     public Registro siguiente = null;
 
@@ -23,9 +21,9 @@ public class Registro {
     * @return Asigna valores recibidos a cada variable, sólo si no son nulos
     */
     public Registro (String nombre, String direccion, String telefono){
-        if (nombre != null) { this.nombre = nombre; }
-        if (direccion != null) { this.direccion = direccion; }
-        if (telefono != null) { this.telefono = telefono; }
+        this.nombre = nombre.length() != 0 ? nombre : "Default contact name";
+        this.direccion = direccion.length() != 0 ? direccion : "Default contact address";
+        this.telefono = telefono.length() != 0 ? telefono : "+XX XX XXXX XXXX";
     }
 
     /* Getter de nombre */
@@ -68,7 +66,7 @@ public class Registro {
     * @return Regresa los datos de la clase unidos por un espacio
     */
     public String toString() {
-        return String.join(" ", this.nombre, this.telefono, this.direccion);
+        return String.join("\t|\t", this.nombre, this.telefono, this.direccion);
     }
 
     /* Getter del siguiente contact */
@@ -82,7 +80,7 @@ public class Registro {
     * @return Asigna el valor recibido sólo si no es nulo, si es nulo, último valor prevalece
     */
     public void setSiguiente(Registro siguiente) {
-        if (siguiente != null) { this.siguiente = siguiente; }
+        this.siguiente = siguiente;
     }
 
 }
