@@ -11,7 +11,7 @@ public class Registro {
 
     public String nombre, direccion, telefono;
 
-    public Registro siguiente = null;
+    private Registro siguiente = null;
 
     /** Constructor principal
     * @param nombre         Nombre del contacto
