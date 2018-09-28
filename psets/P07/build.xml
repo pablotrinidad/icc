@@ -3,11 +3,11 @@
 
   <target name="compile">
     <mkdir dir="build"/>
-    <javac srcdir="src" destdir="build" debug="true" debuglevel="source" />
+    <javac srcdir="src" destdir="build" debug="true" debuglevel="source" includeantruntime="false" />
   </target>
 
   <target name="run" depends="compile">
-    <java classname="icc.contactos.IUContactos" fork="true">
+    <java classname="icc.contactos.IUContactos" fork="true" >
       <classpath>
 	<pathelement path="build" />
       </classpath>

@@ -24,7 +24,7 @@ public class IUContactos {
      * @return
      */
     private int leeEntero(String mensaje) {
-        System.out.print(mensaje);
+        System.out.println(mensaje);
         boolean error = false;
         int num = -1;
         try {
@@ -52,15 +52,15 @@ public class IUContactos {
         System.out.println("Dame los datos del nuevo contacto...");
 
         // Recibe el nombre
-        System.out.print("Nombre: ");
+        System.out.println("Nombre: ");
         String nombre = scanner.nextLine();
 
         // Recibe el nombre
-        System.out.print("Dirección: ");
+        System.out.println("Dirección: ");
         String direccion = scanner.nextLine();
 
         // Recibe el teléfono
-        System.out.print("Teléfono: ");
+        System.out.println("Teléfono: ");
         String telefono = scanner.nextLine();
 
         Registro nuevo = new Registro(nombre, direccion, telefono);
@@ -90,7 +90,7 @@ public class IUContactos {
                     contactos.insertaContacto(reg);
                     break;
                 case 2:
-                    System.out.print("Escribe el nombre del contacto que buscas:");
+                    System.out.println("Escribe el nombre del contacto que buscas:");
                     String pista = scanner.nextLine();
                     reg = contactos.consultar(pista);
                     if(reg == null) {
