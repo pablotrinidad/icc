@@ -25,6 +25,10 @@ public class Reina extends Pieza {
         this.posicion = new Posicion(columna, renglon);
     }
 
+    /** posiblesMovimientos
+    * @return Dada una pieza, debe regresas una lista de las
+    *         posibles posiciones que puede tomar.
+    */
     public ArrayList<Posicion> posiblesMovimientos() {
         ArrayList movements = new ArrayList<Posicion>();
         List<List<Integer>> cellsPermutations = this.genCellExpansions();
@@ -51,6 +55,14 @@ public class Reina extends Pieza {
         return movements;
     }
 
+    /** esValida
+    * @param renglon    Renglón al que se planea mover
+    * @param columna    Columna a la que se planea mover
+    *
+    * @return Un booleando indicando si sería válido mover
+    *         la pieza desde su posición actual hasta la
+    *         posición indicada en los parámetros.
+    */
     public boolean esValida(int renglon, char columna) {
         Posicion p = new Posicion(columna, renglon);
         ArrayList<Posicion> validMovements = this.posiblesMovimientos();
