@@ -1,7 +1,7 @@
 /**
 * ICC Práctica 08
-* Reina.java
-* Propósito: Abstraer el comportamiento de una Reina en ajedrez.
+* Caballo.java
+* Propósito: Abstraer el comportamiento de un caballo en ajedrez.
 *
 * @author Pablo Trinidad (github.com/pablotrinidad)
 * @version 1.0 10/07/2018
@@ -11,7 +11,7 @@ package icc.ajedrez;
 import java.util.*;
 
 
-public class Reina extends Pieza {
+public class Caballo extends Pieza {
 
     Posicion posicion;
 
@@ -19,9 +19,9 @@ public class Reina extends Pieza {
     * @param columna        Columna
     * @param renglón        Renglón
     *
-    * Genera nueva reina en la posición recibida.
+    * Genera nuevo caballo en la posición recibida.
     */
-    public Reina(char columna, int renglon) {
+    public Caballo(char columna, int renglon) {
         this.posicion = new Posicion(columna, renglon);
     }
 
@@ -36,20 +36,11 @@ public class Reina extends Pieza {
         int startingColumn = this.posicion.getColumna();
         int startingRow = (int) this.posicion.getRenglon();
 
-        for(int i=1; i<8; i++) { // Increase the level "depth"
-
-            // Iterate over the cell permutations
-            for (int j=0; j < 8; j++) {
-                int xDifference = i * cellsPermutations.get(j).get(0);
-                int yDifference = i * cellsPermutations.get(j).get(1);
-
-                int newX = startingColumn + xDifference;
-                int newY = startingRow + yDifference;
-
-                // Si la nueva coordenada sigue dentro de los límites
-                if (!this.posicion.columnOutOfBound(newX) && !this.posicion.rowOutOfBound(newY)) {
-                    movements.add(new Posicion((char) newX, newY));
-                }
+        for(int i=0; i < cellsPermutations.size(); i++) {
+            int newX = startingColumn + cellsPermutations.get(i).get(0);
+            int newY = startingRow + cellsPermutations.get(i).get(1);
+            if (!this.posicion.columnOutOfBound(newX) && !this.posicion.rowOutOfBound(newY)) {
+                movements.add(new Posicion((char) newX, newY));
             }
         }
         return movements;
@@ -62,24 +53,27 @@ public class Reina extends Pieza {
     */
     public List<List<Integer>> genCellExpansions() {
         List<List<Integer>> cellsPermutations = new ArrayList<>();
-        for (int i=-1; i < 2; i++) {
-            for (int j=-1; j < 2; j++) {
-                if (i != 0 || j != 0) { // Exclude 0,0
-                    List<Integer> level = new ArrayList<Integer>();
-                    level.add(i);
-                    level.add(j);
-                    cellsPermutations.add(level);
-                }
+        for(int i=1; i<3; i++) {
+            for(int j=-1; j < 2; j += 2) {
+                List<Integer> l1 = new ArrayList<Integer>();
+                l1.add((i * j)); l1.add((3 - i));
+
+                List<Integer> l2 = new ArrayList<Integer>();
+                l2.add((i * j)); l2.add(-(3 - i));
+
+                cellsPermutations.add(l1);
+                cellsPermutations.add(l2);
             }
         }
         return cellsPermutations;
     }
 
+
     /** toString
     * @return Una representación en String de la pieza
     */
     public String toString() {
-        return "Reina: " + this.posicion;
+        return "Caballo: " + this.posicion;
     }
 
 }

@@ -26,6 +26,14 @@ abstract public class Pieza {
     *         la pieza desde su posición actual hasta la
     *         posición indicada en los parámetros.
     */
-    abstract boolean esValida(int renglon, char columna);
+    public boolean esValida(int renglon, char columna) {
+        Posicion p = new Posicion(columna, renglon);
+        ArrayList<Posicion> validMovements = this.posiblesMovimientos();
+        boolean isValid = false;
+        for(int i = 0; i < validMovements.size(); i++) {
+            if (validMovements.get(i).equals(p)) { isValid = true; }
+        }
+        return isValid;
+    }
 
 }
