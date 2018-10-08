@@ -99,11 +99,7 @@ public class Posicion {
     *         de los límites del tablero
     */
     public boolean rowOutOfBound(int row) {
-        if (row < 1 || row > 8) {
-            return true;
-        } else {
-            return false;
-        }
+        return (row < 1 || row > 8);
     }
 
     /** columnOutOfBound
@@ -113,11 +109,7 @@ public class Posicion {
     *         de los límites del tablero
     */
     public boolean columnOutOfBound(int column) {
-        if (column < 97 || column > 104) {
-            return true;
-        } else {
-            return false;
-        }
+        return (column < 97 || column > 104);
     }
 
 

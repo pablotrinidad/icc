@@ -36,11 +36,11 @@ public class UsoAjedrez {
         for(int i = 0; i < cells.size(); i++) {
             char column = (char) (int) cells.get(i).get(1);
             int row = cells.get(i).get(0);
-            Caballo c = new Caballo(column, row);
+            Rey r = new Rey(column, row);
 
             // Evalua los posibles movimientos del caballo en dicha casilla
-            System.out.println("Creando nuevo " + c);
-            System.out.println("\tPosibles movimientos: " + c.posiblesMovimientos());
+            System.out.println("Creando nuevo " + r);
+            System.out.println("\tPosibles movimientos: " + r.posiblesMovimientos());
         }
     }
 
