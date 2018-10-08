@@ -11,7 +11,7 @@
 package icc.ajedrez;
 
 public class Posicion {
-    public short renglon;
+    public int renglon;
     public char columna;
 
     /** Constructor principal
@@ -20,28 +20,22 @@ public class Posicion {
     *
     * Asigna los valores recibidos usando la validación de los setters
     */
-    public Posicion (short renglon, char columna) {
+    public Posicion(char columna, int renglon) {
         this.setRenglon(renglon);
         this.setColumna(columna);
     }
 
     /* Getter de renglón */
-    public short getRenglon() { return this.renglon; }
+    public int getRenglon() { return this.renglon; }
 
     /** Setter de renglón
     * @param renglon        Renglón
     *
     * Valida la entrada y asigna el valor recibido al renglón
     */
-    public void setRenglon(short renglon) {
+    public void setRenglon(int renglon) {
         // Verifica que el valor esté en el rango válido
-        boolean valid = false;
-        for (short i=1; i < 9; i++) {
-            if (renglon == i) { valid = true; }
-        }
-
-        // Lanza exception si no lo está
-        if (valid == false) {
+        if (this.rowOutOfBound(renglon)) {
             throw new IllegalArgumentException();
         }
 
@@ -58,17 +52,23 @@ public class Posicion {
     */
     public void setColumna(char columna) {
         // Verifica que el valor esté en el rango válido (definido por ASCII)
-        boolean valid = false;
-        for (int i=97; i < 105; i++) {
-            if ((int) columna == i) { valid = true; }
-        }
-
-        // Lanza exception si no lo está
-        if (valid == false) {
+        if (this.columnOutOfBound((int) columna)) {
             throw new IllegalArgumentException();
         }
 
         this.columna = columna;
+    }
+
+    /** Setter custom de posición
+    * @param renglon        Renglón
+    * @param columna        Columna
+    *
+    * Valida la entrada y asigna el valor recibido a la columna y renglón.
+    * Evita la llamada a ambos métodos
+    */
+    public void set(char columna, int renglon) {
+        this.setRenglon(renglon);
+        this.setColumna(columna);
     }
 
     /** toString
@@ -77,5 +77,48 @@ public class Posicion {
     public String toString() {
         return "(" + this.columna + ", " + this.renglon + ")";
     }
+
+    /** equals
+    * @return Compara ambos objetos por coordenadas
+    */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) { return true; }
+        if (this == null) { return true; }
+        if (getClass() != o.getClass()) { return false; }
+
+        Posicion p = (Posicion) o;
+        return(columna == p.getColumna()) && (renglon == p.getRenglon());
+
+    }
+
+    /** rowOutOfBound
+    * @param row        Renglón
+    *
+    * @return Regresa un booleano indicando si el renglón se encuentra fuera
+    *         de los límites del tablero
+    */
+    public boolean rowOutOfBound(int row) {
+        if (row < 1 || row > 8) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /** columnOutOfBound
+    * @param column        Columna (valor ASCII)
+    *
+    * @return Regresa un booleano indicando si la columna se encuentra fuera
+    *         de los límites del tablero
+    */
+    public boolean columnOutOfBound(int column) {
+        if (column < 97 || column > 104) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }
