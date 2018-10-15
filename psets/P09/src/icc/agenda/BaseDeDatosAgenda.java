@@ -45,6 +45,7 @@ public class BaseDeDatosAgenda {
     }
 
     public RegistroAgenda dameRegistroPorNombre (String nombre) {
+        // Usa BuscadorPorNombre y el método encuentra de ManejadorDeLista
         // para encontrar el registro correcto dentro de la lista.
         BuscadorPorNombre s = new BuscadorPorNombre(nombre);
         return tabla.encuentra(s);
