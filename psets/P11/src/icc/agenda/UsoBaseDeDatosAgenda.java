@@ -34,6 +34,31 @@ public class UsoBaseDeDatosAgenda {
         return new RegistroAgenda(row[0], row[1], Integer.parseInt(row[2]));
     }
 
+    /* Handle contact search by name */
+    private void handleSearchByName() {
+        System.out.println("Ingresa el nombre que deseas usar en la búsqueda:");
+        String q = in.nextLine();
+        System.out.println("Buscando contacto...");
+        RegistroAgenda r = db.dameRegistroPorNombre(q);
+        if (r != null) {
+            System.out.println("Registro encontrado: " + r);
+        } else {
+            System.out.println("No se encontrón nada :(");
+        }
+    }
+
+    /* Handle contact search by phone */
+    private void handleSearchByPhone() {
+        System.out.println("Ingresa el teléfono que deseas usar en la búsqueda:");
+        int q = Integer.parseInt(in.nextLine());
+        System.out.println("Buscando contacto...");
+        RegistroAgenda r = db.dameRegistroPorTelefono(q);
+        if (r != null) {
+            System.out.println("Registro encontrado: " + r);
+        } else {
+            System.out.println("No se encontrón nada :(");
+        }
+    }
 
     /* Parse main option from menu */
     private boolean parseOption(int o) {
@@ -53,11 +78,11 @@ public class UsoBaseDeDatosAgenda {
                 db.add(newContact);
                 System.out.println("Nuevo contacto creado: (" + newContact + ")");
                 break;
-            case 5:
-                System.out.println("5");
+            case 5: // Search contact by name
+                handleSearchByName();
                 break;
             case 6:
-                System.out.println("6");
+                handleSearchByPhone();
                 break;
             case 7:
                 System.out.println("7");

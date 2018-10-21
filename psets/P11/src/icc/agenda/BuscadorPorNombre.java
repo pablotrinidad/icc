@@ -30,7 +30,7 @@ public class BuscadorPorNombre implements Buscador {
      */
     public boolean esEste(Object o) {
         RegistroAgenda reg = (RegistroAgenda) o;
-        if (reg.getNombre().contains(this.nombreBuscado)) {
+        if (reg.getNombre().toLowerCase().contains(this.nombreBuscado.toLowerCase())) {
             return true;
         } else {
             return false;
