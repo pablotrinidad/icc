@@ -18,7 +18,15 @@ public class BaseDeDatosAgenda {
     /**
      * Este objeto llevará el control de los registros guardados en la lista.
      */
-    private ManejadorDeLista tabla = new ManejadorDeLista();
+    private ManejadorDeLista tabla;
+
+    /**
+    * Constructor vació
+    *
+    */
+    public BaseDeDatosAgenda() {
+        tabla = new ManejadorDeLista();
+    }
 
     /**
      * Constructor.
@@ -27,6 +35,7 @@ public class BaseDeDatosAgenda {
      * @param tam_nombre
      */
     public BaseDeDatosAgenda(String data, int nameLength, int addrLength, int phoneLength) {
+        tabla = new ManejadorDeLista();
         int entryLength = nameLength + addrLength + phoneLength;
         int index = 0;
         while (index < data.length()) {
@@ -42,6 +51,14 @@ public class BaseDeDatosAgenda {
             RegistroAgenda dbEntry = new RegistroAgenda(name, address, phone);
             tabla.agrega(dbEntry);
         }
+    }
+
+    /**
+    * add
+    * @param contact New contacto to be added to table
+    */
+    public void add(RegistroAgenda contact) {
+        tabla.agrega(contact);
     }
 
     public RegistroAgenda dameRegistroPorNombre (String nombre) {
