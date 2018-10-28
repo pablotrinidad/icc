@@ -1,6 +1,6 @@
 #! /bin/bash
 
-DIR_NAME=trinidadppablo10
+DIR_NAME=trinidadppablo11
 
 # Create temp dir
 mkdir $DIR_NAME
