@@ -3,6 +3,9 @@ package icc.agenda;
 
 /* Lang libraries */
 import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 /* Local libraries */
 import icc.agenda.RegistroAgenda;
@@ -60,6 +63,39 @@ public class UsoBaseDeDatosAgenda {
         }
     }
 
+    /* Handle DB export (write in file) */
+    private void handleDBExport() {
+        System.out.println("Ingresa la ruta ABSOLUTA donde quieras guardar la agenda:");
+        String location = in.nextLine();
+        db.guardarAgenda(location);
+    }
+
+    /* Handle DB import (read from file) */
+    private void handleDBImport() {
+        System.out.println("Ingresa la ruta ABSOLUTA donde se encuentran los registros");
+        String location = in.nextLine();
+        try (Scanner fin = new Scanner(new FileReader(location))) {
+            String[] row = new String[3];
+            int index = 0;
+            while(fin.hasNextLine()) {
+                String line = fin.nextLine();
+                if (index == 3) {
+                    RegistroAgenda newContact = new RegistroAgenda(row[0], row[1], Integer.parseInt(row[2]));
+                    db.add(newContact);
+                    System.out.println("Nuevo contacto creado: (" + newContact + ")");
+                    index = 0;
+                }
+                row[index] = line;
+                System.out.println(index);
+                System.out.println(row[index]);
+                index += 1;
+                // /Users/pablotrinidad/Desktop/db.txt
+            }
+        } catch (FileNotFoundException fnfe) {
+            System.err.println("No se encontró el archivo " + location);
+        }
+    }
+
     /* Parse main option from menu */
     private boolean parseOption(int o) {
         boolean action = true;
@@ -68,10 +104,10 @@ public class UsoBaseDeDatosAgenda {
                 System.out.println("1");
                 break;
             case 2:
-                System.out.println("2");
+                handleDBImport();
                 break;
             case 3:
-                System.out.println("3");
+                handleDBExport();
                 break;
             case 4: // Add new contact
                 RegistroAgenda newContact = createNewContact();

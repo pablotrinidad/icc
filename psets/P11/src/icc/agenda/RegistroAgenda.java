@@ -1,7 +1,9 @@
 /* -*- jde -*- */
 /* <RegistroAgenda.java> */
-
 package icc.agenda;
+
+/* Lang libraries */
+import java.io.PrintStream;
 
 
 /**
@@ -60,6 +62,15 @@ public class RegistroAgenda {
     */
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    /** Write entry
+    * @param out    Usado para scribir en un stream ya abierto
+    */
+    public void writeEntry(PrintStream out){
+        out.println(this.nombre);
+        out.println(this.direccion);
+        out.println(this.telefono);
     }
 
     /** toString

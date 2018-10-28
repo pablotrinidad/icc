@@ -6,6 +6,10 @@ package icc.agenda;
 import icc.agenda.RegistroAgenda;
 import icc.util.ManejadorDeLista;
 
+/* Lang packages */
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
 /**
  * Clase para representar una Base de Datos de agenda.
  *
@@ -73,5 +77,27 @@ public class BaseDeDatosAgenda {
         // para encontrar el registro correcto dentro de la lista.
         BuscadorPorTelefono s = new BuscadorPorTelefono(tel);
         return (RegistroAgenda) tabla.encuentra(s);
+    }
+
+    /**
+    * guardarAgenda
+    * @param nombreArchivo   nombre del archivo en el que guardará la DB (dirección absoluta).
+    *
+    * Inicializa el PrintStream que será usado por el resto de las clases
+    */
+    public void guardarAgenda(String nombreArchivo) {
+        try (PrintStream  fout = new PrintStream(nombreArchivo)) {
+            GuardarRegistro gr = new GuardarRegistro(fout);
+            tabla.encuentra(gr);
+        } catch (FileNotFoundException fnfe) {
+            System.err.println(
+                "No se encontró el archivo " +
+                nombreArchivo + " y no pudo ser creado"
+            );
+        } catch (SecurityException se) {
+            System.err.println(
+                "No se tiene permiso de escritura sobre el archivo"
+            );
+        }
     }
 }
