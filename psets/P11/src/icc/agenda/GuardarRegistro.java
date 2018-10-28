@@ -1,5 +1,5 @@
 /* -*- jde -*- */
-/* <Buscador.java> */
+/* <GuardarRegistro.java> */
 
 package icc.agenda;
 

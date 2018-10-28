@@ -100,4 +100,13 @@ public class BaseDeDatosAgenda {
             );
         }
     }
+
+    /**
+    * imprimeRegistros
+    * Imprime todos los registros de la DB
+    */
+    public void printDBEntries() {
+        ImprimeRegistros ir = new ImprimeRegistros();
+        tabla.encuentra(ir);
+    }
 }

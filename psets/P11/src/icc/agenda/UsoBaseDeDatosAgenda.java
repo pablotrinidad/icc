@@ -77,19 +77,20 @@ public class UsoBaseDeDatosAgenda {
         try (Scanner fin = new Scanner(new FileReader(location))) {
             String[] row = new String[3];
             int index = 0;
-            while(fin.hasNextLine()) {
-                String line = fin.nextLine();
+            boolean keepGoing = true;
+            while(keepGoing) {
                 if (index == 3) {
                     RegistroAgenda newContact = new RegistroAgenda(row[0], row[1], Integer.parseInt(row[2]));
                     db.add(newContact);
                     System.out.println("Nuevo contacto creado: (" + newContact + ")");
                     index = 0;
+                    keepGoing = fin.hasNextLine();
+                } else {
+                    String line = fin.nextLine();
+                    row[index] = line;
+                    index += 1;
+                    keepGoing = fin.hasNextLine() || index == 3;
                 }
-                row[index] = line;
-                System.out.println(index);
-                System.out.println(row[index]);
-                index += 1;
-                // /Users/pablotrinidad/Desktop/db.txt
             }
         } catch (FileNotFoundException fnfe) {
             System.err.println("No se encontró el archivo " + location);
@@ -101,7 +102,7 @@ public class UsoBaseDeDatosAgenda {
         boolean action = true;
         switch (o) {
             case 1:
-                System.out.println("1");
+                System.out.println("Base de datos lista!");
                 break;
             case 2:
                 handleDBImport();
@@ -121,7 +122,7 @@ public class UsoBaseDeDatosAgenda {
                 handleSearchByPhone();
                 break;
             case 7:
-                System.out.println("7");
+                db.printDBEntries();
                 break;
             case 8:
                 System.out.println("Adios!");
