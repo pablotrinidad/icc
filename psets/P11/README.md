@@ -1,6 +1,6 @@
-# Práctica 10 - Refactorización
+# Práctica 11 - Base de datos persistente
 
-Este folder contiene los resultados obtenidos al completar la Práctica 10
+Este folder contiene los resultados obtenidos al completar la Práctica 11
 
 ## Contenido
 
