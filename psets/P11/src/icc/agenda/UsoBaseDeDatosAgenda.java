@@ -77,7 +77,7 @@ public class UsoBaseDeDatosAgenda {
         try (Scanner fin = new Scanner(new FileReader(location))) {
             String[] row = new String[3];
             int index = 0;
-            boolean keepGoing = fin.nextLine();
+            boolean keepGoing = fin.hasNextLine();
             while(keepGoing) {
                 if (index == 3) {
                     RegistroAgenda newContact = new RegistroAgenda(row[0], row[1], Integer.parseInt(row[2]));
