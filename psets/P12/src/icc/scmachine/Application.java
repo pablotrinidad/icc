@@ -8,7 +8,7 @@
 
 package icc.scmachine;
 
-// Land libraries
+// Lang libraries
 import java.util.Scanner;
 
 
