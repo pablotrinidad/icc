@@ -28,6 +28,7 @@ public class Cambio {
 
     public Cambio(int[] units) {
         this.units = units;
+        this.parseAmounts(units);
     }
 
     // Return sum of all coins
@@ -35,13 +36,30 @@ public class Cambio {
         return this.totalValue;
     }
 
+    // onesAmount getter
+    public int getOnesAmount() { return this.onesAmount; }
+
+    // twosAmount getter
+    public int getTwosAmount() { return this.twosAmount; }
+
+    // fivesAmount getter
+    public int getFivesAmount() { return this.fivesAmount; }
+
+    // tensAmount getter
+    public int getTensAmount() { return this.tensAmount; }
+
+    // Assign each coin value an amount from given units list
+    private void parseAmounts(int[] units) {
+        for (int i=0; i<units.length; i++) {
+            if (units[i] == 1) { this.onesAmount += 1; }
+            if (units[i] == 2) { this.twosAmount += 1; }
+            if (units[i] == 5) { this.fivesAmount += 1; }
+            if (units[i] == 10) { this.tensAmount += 1; }
+        }
+    }
+
+    // Return string representation of the units array
     public String toString() {
         return Arrays.toString(this.units);
-        // String rep = "";
-        // for (int i=0; i<this.units.length; i++) {
-        //     rep += Integer.toString(this.units[i]);
-        //     rep += ", ";
-        // }
-        // return rep.length() > 0 ? rep.substring(0, rep.length() - 2) : "";
     }
 }
