@@ -9,6 +9,7 @@
 package icc.scmachine;
 
 // Lang libraries
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -24,7 +25,21 @@ public class Application {
     }
 
     private void handleMachineExecution() {
-        System.out.println("Executing");
+        System.out.println("Ingrese el valor que desea obtener: ");
+        int n;
+        n = Integer.parseInt(this.in.nextLine());
+        ArrayList<Cambio> result = this.machine.computeSpareChangeSets(n);
+        System.out.println("\n==================================================================");
+        System.out.println(
+            result.size() +
+            " posibles combinaciones de cambio para formar $" +
+            Integer.toString(n) +
+            ":"
+        );
+        for(Cambio c: result) {
+            System.out.println("\t" + c);
+        }
+        System.out.println("==================================================================\n");
     }
 
     /* Parse main option from menu */

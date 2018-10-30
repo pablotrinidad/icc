@@ -11,12 +11,13 @@ package icc.scmachine;
 
 // Lang libraries
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Cambio {
 
     // Initial list containing spare change values.
-    private ArrayList<Integer> units;
+    private int[] units;
 
     private int onesAmount; // Represent the amount of coins with value of $1
     private int twosAmount; // Represent the amount of coins with value of $2
@@ -25,7 +26,7 @@ public class Cambio {
 
     private int totalValue; // Sum of all coins
 
-    public Cambio(ArrayList<Integer> units) {
+    public Cambio(int[] units) {
         this.units = units;
     }
 
@@ -35,11 +36,12 @@ public class Cambio {
     }
 
     public String toString() {
-        String rep = "";
-        for(Integer i : this.units) {
-            rep += Integer.toString(i);
-            rep += ", ";
-        }
-        return rep;
+        return Arrays.toString(this.units);
+        // String rep = "";
+        // for (int i=0; i<this.units.length; i++) {
+        //     rep += Integer.toString(this.units[i]);
+        //     rep += ", ";
+        // }
+        // return rep.length() > 0 ? rep.substring(0, rep.length() - 2) : "";
     }
 }
