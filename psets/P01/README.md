@@ -16,3 +16,21 @@ del **Manual de Prácticas 2018-I** escrito por *Verónica E. Arriola-Ríos*.
 
 Tal como está descrito en la actividad, modifiqué los textos para que dijeran ***Parametro n:***
 en lugar de ***Argumento n:*** y donde `0 < n < 4` en lugar de `0 ≤ n < 3`
+
+## Cronograma
+
+* **Agosto 22** Práctica publicada
+* **Agosto 24** Práctica entregada
+* **Agosto 26** Fecha límite de entrega
+* **Octubre 24** Práctica calificada
+
+## Calificación: 9.2
+
+**Justificación:**
+
+```
+1. Código 7.5/7.5
+2. Actividades 1/1
+3. Preguntas 0/0
+4. Formato 0.7/1.5 Enviaste archivos .class.
+```
