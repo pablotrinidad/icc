@@ -1,6 +1,6 @@
 # Prácticas
 
-### Estado de las calificaciones (5/13)
+### Estado de las calificaciones (4/13)
 
 * [x] [Práctica 1 - Compilador](P01)
     * **Calificación**: **`9.2`** | **Límite de entrega**: Agosto 26 | **Fecha de calificación**: Octubre 24
@@ -23,7 +23,7 @@
 * [x] [Práctica 7 - Contactos](P07)
     * **Calificación**: **`7.5`** | **Límite de entrega**: Septiembre 30 | **Fecha de calificación**: Noviembre 6
 
-* [x] [Práctica 8 - Ajedrez](P08)
+* [ ] [Práctica 8 - Ajedrez](P08)
     * **Calificación**: **`SIN CALIFICAR`** | **Límite de entrega**: Octubre 7 | **Fecha de calificación**: **`SIN CALIFICAR`**
 
 * [ ] [Práctica 9 - Listas](P09)
