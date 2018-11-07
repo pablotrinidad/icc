@@ -10,9 +10,14 @@
 * [ ] [Práctica 2 - Tipos primitivos y bits](P02)
     * **Calificación**: **`SIN CALIFICAR`**
     * **Límite de entrega**: Agosto 28
-    * **Fecha de calificación**: `SIN CALIFICAR`
+    * **Fecha de calificación**: **`SIN CALIFICAR`**
 
-* [ ] [Práctica 3 - Variables, tipos y operadores](P03)
+* [x] [Práctica 3 - Variables, tipos y operadores](P03)
     * **Calificación**: **`9.5`**
     * **Límite de entrega**: Septiembre 2
     * **Fecha de calificación**: Noviembre 4
+
+* [ ] [Práctica 4 - Ciclos y funciones](P04)
+    * **Calificación**: **`SIN CALIFICAR`**
+    * **Límite de entrega**: Septiembre 4
+    * **Fecha de calificación**: **`SIN CALIFICAR`**
