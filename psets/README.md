@@ -3,9 +3,7 @@
 ### Estado de las calificaciones (5/13)
 
 * [x] [Práctica 1 - Compilador](P01)
-    * **Calificación**: **`9.2`**
-    * **Límite de entrega**: Agosto 26
-    * **Fecha de calificación**: Octubre 24
+    * **Calificación**: **`9.2`** | **Límite de entrega**: Agosto 26 | **Fecha de calificación**: Octubre 24
 
 * [ ] [Práctica 2 - Tipos primitivos y bits](P02)
     * **Calificación**: **`SIN CALIFICAR`**
