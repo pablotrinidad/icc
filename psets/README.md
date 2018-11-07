@@ -1,6 +1,6 @@
 # Prácticas
 
-## Estado de las calificaciones
+### Estado de las calificaciones (5/13)
 
 * [x] [Práctica 1 - Compilador](P01)
     * **Calificación**: **`9.2`**
