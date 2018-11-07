@@ -35,7 +35,7 @@ necesarias para compilar y ejecutar la práctica.
 * **Septiembre 2** Fecha límite de entrega
 * **Noviembre 4** Práctica calificada
 
-## Calificación: 9.2
+## Calificación: 9.5
 
 **Justificación:**
 
