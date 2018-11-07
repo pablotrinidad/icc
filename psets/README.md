@@ -21,3 +21,8 @@
     * **Calificación**: **`SIN CALIFICAR`**
     * **Límite de entrega**: Septiembre 4
     * **Fecha de calificación**: **`SIN CALIFICAR`**
+
+* [x] [Práctica 5 - Recursividad con Euclides](P05)
+    * **Calificación**: **`7.8`**
+    * **Límite de entrega**: Septiembre 11
+    * **Fecha de calificación**: Noviembre 4
