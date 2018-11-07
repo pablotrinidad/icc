@@ -1,6 +1,6 @@
 # Prácticas
 
-### Estado de las calificaciones (4/13)
+### Estado de las calificaciones (5/13)
 
 * [x] [Práctica 1 - Compilador](P01)
     * **Calificación**: **`9.2`** | **Límite de entrega**: Agosto 26 | **Fecha de calificación**: Octubre 24
