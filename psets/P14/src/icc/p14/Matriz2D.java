@@ -1,3 +1,6 @@
+package icc.p14;
+
+
 public class Matriz2D {
 
     double data[][];
@@ -7,15 +10,35 @@ public class Matriz2D {
         this.data = new double[rows][cols];
     }
 
-    // Given a "1D" array, load it in the matrix by.
-    public void loadFromArray(double[] input) {
-        int rowsCount = getRows();
-        int columnsCount = getColumns();
+    // Given a "2D" array, return a new instance with the given data.
+    public static Matriz2D loadFromArray(double[][] input) {
+        // Verify array is not empty
+        if (input.length == 0) { throw new IllegalArgumentException("Cannot create a 2D matrix from an empty array"); }
 
-        // Verify given array contains the right amount of data needed
-        if (input.length != (rowsCount * columnsCount)) {
-            throw new IllegalArgumentException("Input array does not contain the right amount of data");
+        // Store matrix size
+        int rows = input.length;
+        int columns = input[0].length;
+
+        // Verify array is not empty (columns)
+        if (columns == 0) { throw new IllegalArgumentException("Cannot create a 2D matrix from an empty array"); }
+
+        // Initialize new matrix
+        Matriz2D matrix = new Matriz2D(rows, columns);
+
+        for(int i = 0; i < rows; i++) {
+            double row[] = input[i];
+
+            // Double check row size matches columns count
+            if (row.length != columns) {
+                throw new IllegalArgumentException("Inconsistent row size found!");
+            }
+
+            // Populate matrix data
+            for (int j = 0; j < columns; j++) { matrix.data[i][j] = row[j]; }
         }
+
+        return matrix;
+
     }
 
     // Return the length of each column (count of rows)
@@ -34,14 +57,16 @@ public class Matriz2D {
 
     // Return each element in matrix separated by line break for each rows
     public String toString() {
-        String rep = "";
-        for(int i = 0; i < this.data.length; i++) {
-            for(int j=0; j < this.data.length; j++) {
-                rep += Double.toString(this.data[i][j]) + " ";
+        String rep = "| ";
+        int rows = this.getRows();
+        int cols = this.getColumns();
+        for(int i = 0; i < rows; i++) {
+            for(int j=0; j < cols; j++) {
+                rep += Double.toString(this.data[i][j]) + " | ";
             }
-            rep += "\n";
+            rep += "\n| ";
         }
-        return rep;
+        return rep.substring(0, rep.length() - 3);
     }
 
 }
