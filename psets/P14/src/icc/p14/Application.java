@@ -93,7 +93,7 @@ public class Application {
     // Test matrix multiplication
     private void testMatrixMultiplication() {
         System.out.println("========================================");
-        System.out.println("=     Testing matrix multiplication     =");
+        System.out.println("=     Testing matrix multiplication    =");
         System.out.println("========================================");
 
         int n = this.random.nextInt(4) + 2;
@@ -113,12 +113,34 @@ public class Application {
         System.out.println("C:\n" + c + "\n");
     }
 
+    // Test matrix scalar multiplication
+    private void testMatrixScalarMultiplication() {
+        System.out.println("=========================================");
+        System.out.println("=  Testing matrix scalar multiplication =");
+        System.out.println("=========================================");
+
+        int rows = this.random.nextInt(5) + 2;
+        int cols = this.random.nextInt(5) + 2;
+        int c = this.random.nextInt(100) + 1;
+
+        System.out.println("Creating new matrix...");
+        Matriz2D a = this.genRandomMatrix(rows, cols);
+
+        System.out.println("A:\n" + a);
+
+        Matriz2D r = a.multiply(c);
+
+        System.out.println("Computing scalar multiplication by " + c + "...");
+        System.out.println("R:\n" + r + "\n");
+    }
+
     // Test Matriz2D features.
     public void start() {
         this.testMatrixConstruction();
         this.testMatrixAddition();
         this.testMatrixSubtraction();
         this.testMatrixMultiplication();
+        this.testMatrixScalarMultiplication();
     }
 
     // Main method. Initialize and start app.

@@ -132,4 +132,18 @@ public class Matriz2D {
         return c;
     }
 
+    // Scalar multiplication
+    public Matriz2D multiply(double c) {
+        int rows = this.getRows();
+        int cols = this.getColumns();
+        Matriz2D r = new Matriz2D(rows, cols);
+
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < cols; j++)
+                r.data[i][j] = this.data[i][j] * c;
+        }
+
+        return r;
+    }
+
 }
