@@ -39,3 +39,6 @@
 
 * [x] [Práctica 13 - Arreglos y estadísticas](P13)
     * **Calificación**: **`10`** | **Límite de entrega**: Noviembre 6 | **Fecha de calificación**: Noviembre 7
+
+* [ ] [Práctica 14 - Arreglos y Matrices](P14)
+    * **Calificación**: **`SIN CALIFICAR`** | **Límite de entrega**: Noviembre 13 | **Fecha de calificación**: **`SIN CALIFICAR`**
