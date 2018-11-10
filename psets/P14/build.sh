@@ -9,7 +9,6 @@ mkdir $DIR_NAME
 cp -r src $DIR_NAME/
 cp run.sh $DIR_NAME/
 cp readme.txt $DIR_NAME/
-cp datos.txt $DIR_NAME/
 
 # Remove junk files
 rm -rf ./src/**/**/*.class

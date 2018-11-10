@@ -72,7 +72,7 @@ public class Matriz2D {
         return rep.substring(0, rep.length() - 3);
     }
 
-    // Handle substraction and addition.
+    // Handle subtraction and addition.
     private Matriz2D addition(Matriz2D b, boolean subtraction) {
         int rows = this.getRows();
         int cols = this.getColumns();
