@@ -1,6 +1,6 @@
 # Prácticas
 
-### Estado de las calificaciones (8/13)
+### Estado de las calificaciones (9/14)
 
 * [x] [Práctica 1 - Compilador](P01)
     * **Calificación**: **`9.2`** | **Límite de entrega**: Agosto 26 | **Fecha de calificación**: Octubre 24
@@ -11,8 +11,8 @@
 * [x] [Práctica 3 - Variables, tipos y operadores](P03)
     * **Calificación**: **`9.5`** | **Límite de entrega**: Septiembre 2 | **Fecha de calificación**: Noviembre 4
 
-* [ ] [Práctica 4 - Ciclos y funciones](P04)
-    * **Calificación**: **`SIN CALIFICAR`** | **Límite de entrega**: Septiembre 4 | **Fecha de calificación**: **`SIN CALIFICAR`**
+* [x] [Práctica 4 - Ciclos y funciones](P04)
+    * **Calificación**: **`10`** | **Límite de entrega**: Septiembre 4 | **Fecha de calificación**: Noviembre 10
 
 * [x] [Práctica 5 - Recursividad con Euclides](P05)
     * **Calificación**: **`7.8`** | **Límite de entrega**: Septiembre 11 | **Fecha de calificación**: Noviembre 4
