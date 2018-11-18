@@ -1,6 +1,6 @@
 # Prácticas
 
-### Estado de las calificaciones (9/14)
+### Estado de las calificaciones (13/14)
 
 * [x] [Práctica 1 - Compilador](P01)
     * **Calificación**: **`9.2`** | **Límite de entrega**: Agosto 26 | **Fecha de calificación**: Octubre 24
@@ -28,14 +28,15 @@
 
 * [x] [Práctica 9 - Listas](P09)
     * **Calificación**: **`10`** | **Límite de entrega**: Octubre 14 | **Fecha de calificación**: Noviembre 7
-* [ ] [Práctica 10 - Refactorización](P10)
-    * **Calificación**: **`SIN CALIFICAR`** | **Límite de entrega**: Octubre 21 | **Fecha de calificación**: **`SIN CALIFICAR`**
+
+* [x] [Práctica 10 - Refactorización](P10)
+    * **Calificación**: **`9.5`** | **Límite de entrega**: Octubre 21 | **Fecha de calificación**: **`Noviembre 13`**
 
 * [x] [Práctica 11 - Persistencia](P11)
     * **Calificación**: **`10`** | **Límite de entrega**: Octubre 28 | **Fecha de calificación**: Noviembre 8
 
-* [ ] [Práctica 12 - Recursividad - Máquina de cambio](P12)
-    * **Calificación**: **`SIN CALIFICAR`** | **Límite de entrega**: Noviembre 4 | **Fecha de calificación**: **`SIN CALIFICAR`**
+* [x] [Práctica 12 - Recursividad - Máquina de cambio](P12)
+    * **Calificación**: **`9`** | **Límite de entrega**: Noviembre 4 | **Fecha de calificación**: **`Noviembre 14`**
 
 * [x] [Práctica 13 - Arreglos y estadísticas](P13)
     * **Calificación**: **`10`** | **Límite de entrega**: Noviembre 6 | **Fecha de calificación**: Noviembre 7
