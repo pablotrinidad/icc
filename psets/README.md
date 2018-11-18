@@ -23,8 +23,8 @@
 * [x] [Práctica 7 - Contactos](P07)
     * **Calificación**: **`7.5`** | **Límite de entrega**: Septiembre 30 | **Fecha de calificación**: Noviembre 6
 
-* [ ] [Práctica 8 - Ajedrez](P08)
-    * **Calificación**: **`SIN CALIFICAR`** | **Límite de entrega**: Octubre 7 | **Fecha de calificación**: **`SIN CALIFICAR`**
+* [x] [Práctica 8 - Ajedrez](P08)
+    * **Calificación**: **`12`** | **Límite de entrega**: Octubre 7 | **Fecha de calificación**: **`Noviembre 11`**
 
 * [x] [Práctica 9 - Listas](P09)
     * **Calificación**: **`10`** | **Límite de entrega**: Octubre 14 | **Fecha de calificación**: Noviembre 7
