@@ -17,8 +17,8 @@
 * [x] [Práctica 5 - Recursividad con Euclides](P05)
     * **Calificación**: **`7.8`** | **Límite de entrega**: Septiembre 11 | **Fecha de calificación**: Noviembre 4
 
-* [ ] [Práctica 6 - Tipos de datos y clases](P06)
-    * **Calificación**: **`SIN CALIFICAR`** | **Límite de entrega**: Septiembre 18 | **Fecha de calificación**: **`SIN CALIFICAR`**
+* [x] [Práctica 6 - Tipos de datos y clases](P06)
+    * **Calificación**: **`9.5`** | **Límite de entrega**: Septiembre 18 | **Fecha de calificación**: **`Noviembre 11`**
 
 * [x] [Práctica 7 - Contactos](P07)
     * **Calificación**: **`7.5`** | **Límite de entrega**: Septiembre 30 | **Fecha de calificación**: Noviembre 6
