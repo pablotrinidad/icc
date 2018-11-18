@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import static javafx.application.Application.launch;
 
 /**
@@ -18,13 +19,28 @@ import static javafx.application.Application.launch;
  */
 public class SistemaSolar extends Application {
 
-    private final static int ANCHO_VENTANA_INICIAL = 1200;
-    private final static int ALTO_VENTANA_INICIAL = 800;
+    private final static int ANCHO_VENTANA_INICIAL = 2000;
+    private final static int ALTO_VENTANA_INICIAL = 1000;
     private final static int RADIO_SOL = 30;
 
+    // Planets
     private Astro sol;
-    private Satelite tierra;
-    private Satelite luna;
+    private Satelite mercury;
+    private Satelite venus;
+    private Satelite earth;
+    private Satelite mars;
+    private Satelite jupiter;
+    private Satelite saturn;
+    private Satelite uranus;
+    private Satelite neptune;
+
+    // Planets' satellites
+    private Satelite moon;
+
+    private Satelite io;
+    private Satelite europa;
+    private Satelite ganymede;
+    private Satelite callisto;
 
     public static int getSolCentroX() {
         return ANCHO_VENTANA_INICIAL/2;
@@ -39,10 +55,24 @@ public class SistemaSolar extends Application {
      * alrededor de quien.
      */
     private void creaAstros() {
-        sol = new Astro(RADIO_SOL);
-        tierra = new Satelite(Satelite.DatosSatelite.TIERRA, sol);
-        luna = new Satelite(Satelite.DatosSatelite.LUNA, tierra);
-        new Satelite(Satelite.DatosSatelite.LUNA_LUNA, luna);
+        sol = new Astro(RADIO_SOL, Color.rgb(225, 69, 30));
+
+        // Planets
+        mercury = new Satelite(Satelite.DatosSatelite.MERCURY, sol);
+        venus = new Satelite(Satelite.DatosSatelite.VENUS, sol);
+        earth = new Satelite(Satelite.DatosSatelite.EARTH, sol);
+        mars = new Satelite(Satelite.DatosSatelite.MARS, sol);
+        jupiter = new Satelite(Satelite.DatosSatelite.JUPITER, sol);
+        saturn = new Satelite(Satelite.DatosSatelite.SATURN, sol);
+        uranus = new Satelite(Satelite.DatosSatelite.URANUS, sol);
+        neptune = new Satelite(Satelite.DatosSatelite.NEPTUNE, sol);
+
+        // Planets' satellites
+        moon = new Satelite(Satelite.DatosSatelite.MOON, earth);
+        io = new Satelite(Satelite.DatosSatelite.IO, jupiter);
+        europa = new Satelite(Satelite.DatosSatelite.EUROPA, jupiter);
+        ganymede = new Satelite(Satelite.DatosSatelite.GANYMEDE, jupiter);
+        callisto = new Satelite(Satelite.DatosSatelite.CALLISTO, jupiter);
     }
 
     /**
@@ -57,7 +87,7 @@ public class SistemaSolar extends Application {
 
         root.getChildren().add(sol.getNodo());
 
-        Scene scene = new Scene(root, ANCHO_VENTANA_INICIAL, ALTO_VENTANA_INICIAL);
+        Scene scene = new Scene(root, ANCHO_VENTANA_INICIAL, ALTO_VENTANA_INICIAL, Color.rgb(0, 0, 0));
         return scene;
     }
 

@@ -5,6 +5,8 @@
  */
 package sistemasolar;
 
+import javafx.scene.paint.Color;
+
 /**
  * Clase que describe astros que giran alrededor de otro.
  * @author blackzafiro
@@ -22,20 +24,32 @@ public class Satelite extends Astro {
      * Deben ser ficticios, pues de otro modo la simulación no cabe en pantalla.
      */
     public enum DatosSatelite {
-        TIERRA(1.0, 1.00000261, 0.98594, 1.0),
-        LUNA(0.273, ESCALA_ORBITA_SATELITE * 0.00257, ESCALA_ORBITA_SATELITE * 0.002566, 0.0739),
-        LUNA_LUNA(0.17, (ESCALA_ORBITA_SATELITE * 0.00257)/2.1, (ESCALA_ORBITA_SATELITE * 0.002566)/2.1, 0.036);;
+        MERCURY(0.4, 0.2, 0.2, 0.3, Color.rgb(163, 166, 175)),
+        VENUS(0.9, 0.3, 0.3, 0.6, Color.rgb(228, 168, 72)),
+        EARTH(1.0, 0.5, 0.5, 1.0, Color.rgb(44, 55, 177)),
+        MARS(0.5, 0.7, 0.7, 1.8809, Color.rgb(221, 51, 51)),
+        JUPITER(3, 1.2, 1.2, 3, Color.rgb(227, 200, 182)),
+        SATURN(2.5, 1.6, 1.6, 3.2, Color.rgb(204, 167, 116)),
+        URANUS(.5, 2, 2, 3.5, Color.rgb(160, 212, 244)),
+        NEPTUNE(.5, 2.2, 2.2, 3.7, Color.rgb(71, 110, 254)),
+        MOON(0.273, ESCALA_ORBITA_SATELITE * 0.00257, ESCALA_ORBITA_SATELITE * 0.002566, 0.0739, Color.rgb(255, 255, 255)),
+        IO(0.24, .11, .11, 0.4, Color.rgb(255, 243, 147)),
+        EUROPA(0.2, .09, .09, .3, Color.rgb(242, 133, 0)),
+        GANYMEDE(0.36, .13, .13, .8, Color.rgb(51, 102, 204)),
+        CALLISTO(0.4, .15, .15, 0.7, Color.rgb(221, 51, 51));;
 
         private final double diametroEcuatorial;
         private final double semiejeMayor;
         private final double semiejeMenor;
         private final double periodoOrbital;
+        private final Color color;
 
 
         DatosSatelite(double diametroEcuatorial,
                   double semiejeMayor, double semiejeMenor,
-                  double periodoOrbital) {
+                  double periodoOrbital, Color color) {
             this.diametroEcuatorial = diametroEcuatorial;
+            this.color = color;
             this.semiejeMayor = semiejeMayor;
             this.semiejeMenor = semiejeMenor;
             this.periodoOrbital = periodoOrbital;
@@ -80,7 +94,7 @@ public class Satelite extends Astro {
      * @param foco astro alrededor del cual gira este satélite.
      */
     public Satelite(DatosSatelite datos, Astro foco) {
-        super(datos.diametroEcuatorial * ESCALA_RADIO);
+        super(datos.diametroEcuatorial * ESCALA_RADIO, datos.color);
         this.datos = datos;
         creaOrbita(foco);
     }

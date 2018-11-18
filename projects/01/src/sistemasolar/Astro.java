@@ -8,7 +8,8 @@ package sistemasolar;
 import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Sphere;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 /**
  * Clase que representa a todos los astros alrededor de los cuales pueden girar
@@ -25,17 +26,17 @@ public class Astro {
     /**
      * Figura que representa a este astro.
      */
-    protected Sphere figura;
+    protected Circle figura;
 
     /**
      * Constructor.
      * @param diametro Pixeles de diámetro.
      */
-    public Astro(double diametro) {
+    public Astro(double diametro, Color color) {
         nodo = new StackPane();
-        nodo.setStyle("-fx-background-color: rgba(200, 160, 220, 0.5);");
         nodo.setMaxSize(100, 100);
-        figura = new Sphere(diametro);
+        figura = new Circle(diametro);
+        figura.setFill(color);
         nodo.getChildren().add(figura);
     }
 
