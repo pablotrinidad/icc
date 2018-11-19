@@ -63,7 +63,13 @@ public class OrbitaTransition extends Transition {
     protected void interpolate(double frac) {
         // Coordenadas en la elipse con respecto al foco
         double t = 2 * Math.PI * frac;
-        double x = semiejeMayor * Math.cos(t) + 2 * c;
+        double i = this.satelite.getInclination();
+        double x;
+        if (i > 0) {
+            x = (semiejeMayor * Math.cos(t)) + (semiejeMayor * Math.sin(t));
+        } else {
+            x = semiejeMayor * Math.cos(t);
+        }
         double y = semiejeMenor * Math.sin(t);
 
         // Posición del centro del foco con respecto a su nodo padre

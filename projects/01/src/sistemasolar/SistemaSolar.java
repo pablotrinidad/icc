@@ -33,6 +33,7 @@ public class SistemaSolar extends Application {
     private Satelite saturn;
     private Satelite uranus;
     private Satelite neptune;
+    private Satelite pluto;
 
     // Planets' satellites
     private Satelite moon;
@@ -66,6 +67,7 @@ public class SistemaSolar extends Application {
         saturn = new Satelite(Satelite.DatosSatelite.SATURN, sol);
         uranus = new Satelite(Satelite.DatosSatelite.URANUS, sol);
         neptune = new Satelite(Satelite.DatosSatelite.NEPTUNE, sol);
+        pluto = new Satelite(Satelite.DatosSatelite.PLUTO, sol);
 
         // Planets' satellites
         moon = new Satelite(Satelite.DatosSatelite.MOON, earth);
