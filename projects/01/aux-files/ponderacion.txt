@@ -1,0 +1,18 @@
+1. Código 11.5/11.5
+    Ejercicio1 0/0 Modificar build.xml, Pero deben asegurarse de que pueda correrlo.
+    Ejercicio2 0.5/0.5 Quitar luna a la luna
+    Ejercicio3 3.5/3.5 Agregar los demas planetas con orbitas elipticas
+    Ejercicio4 1.5/1.5 Medio punto mas punto extra
+        0.5 Solo color
+        1.5 Si es foto
+    Ejercicio5 1/1 Agregar 4 satelites a jupiter o al menos cuatro satelites sin contar la luna de la tierra.
+    Ejercicio6 0/0 Guardar el proyecto.
+    Ejercicio7 4/4 Pluton con su orbita rara.
+    Ejercicio8 1/1 Asteroides aleatorios. Punto extra
+2. Actividades 0/0 No hay
+3. Preguntas 0/0 No hay
+4. Formato 0.5/0.5
+    Documentacion 0/0 No hay nada que documentar
+    Identacion 0.2/0.2 Técnicamente sélo modifican 2 métodos, y tener que indentar dos metodos no es mucho, pero identenlos.
+    Estructura de carpetas 0.1/0.1 Si dejan como esta el programa deberian de tener bien esta parte.
+    Nombre del empaquetado 0.1/0.1 Se mantiene como esta en las prácticas
