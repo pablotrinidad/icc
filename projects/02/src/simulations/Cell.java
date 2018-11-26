@@ -1,6 +1,7 @@
 package simulations;
 
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.Random;
@@ -8,14 +9,17 @@ import java.util.Random;
 public abstract class Cell {
 
     // UI Elements
-    protected StackPane pane;
-    private Rectangle figure;
+    public Rectangle figure;
 
     // Automata data
     protected int state;
 
     // Auxiliaries
-    protected Random prng = new Random();  // Pseudo-random number generator
+    protected Random prng; // Pseudo-random number generator
+
+    public Cell() {
+        this.prng = new Random();
+    }
 
     // For simulations that doesn't require to explicitly know the time
     public abstract void updateState();
@@ -28,11 +32,4 @@ public abstract class Cell {
         return Integer.toString(this.state);
     }
 
-    public void translateX(double x) {
-        this.pane.setTranslateX(x);
-    }
-
-    public void translateY(double y) {
-        this.pane.setTranslateY(y);
-    }
 }
