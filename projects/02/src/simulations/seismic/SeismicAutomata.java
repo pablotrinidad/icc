@@ -1,5 +1,6 @@
 package simulations.seismic;
 
+import javafx.scene.paint.Color;
 import simulations.Cell;
 
 public class SeismicAutomata extends Cell {
@@ -11,6 +12,7 @@ public class SeismicAutomata extends Cell {
         super();
         this.threshold = threshold;
         this.state = this.prng.nextInt(threshold);
+        this.updateColor();
     }
 
     public void updateState() {
@@ -36,7 +38,13 @@ public class SeismicAutomata extends Cell {
             // round state back to threshold
             this.state = threshold;
         }
+        this.updateColor();
     }
 
     public void updateState(int t) { this.updateState(); }
+
+    public void updateColor() {
+        int red = ((this.state - 1) / (this.threshold - 1)) * 255;
+        this.figure.setFill(Color.rgb(this.prng.nextInt(256), 0, 0));
+    }
 }

@@ -9,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import simulations.seismic.SeismicAutomata;
 
 
 /*
@@ -39,14 +40,14 @@ public abstract class Simulation {
     }
 
     // Run simulation and plotting
-    public void run(Stage window) {
+    public void run(Stage window) throws InterruptedException {
         this.setupUI(window);
 
         this.runSimulation();
     }
 
     // Run simulation t times
-    final void runSimulation() {
+    final void runSimulation() throws InterruptedException {
         for (int localT = 0; localT < this.t; localT ++) {
             for (int i = 0; i < this.n; i++) {
                 for (int j = 0; j < this.n; j++) {
@@ -66,13 +67,10 @@ public abstract class Simulation {
         // Add cells to grid
         for (int i = 0; i < this.n; i++) {
             for (int j = 0; j < this.n; j++) {
-                this.cells[i][j].figure = new Rectangle();
                 this.cells[i][j].figure.setX(i * w);
                 this.cells[i][j].figure.setY(j * w);
                 this.cells[i][j].figure.setWidth(w);
                 this.cells[i][j].figure.setHeight(w);
-                this.cells[i][j].figure.setFill(null);
-                this.cells[i][j].figure.setStroke(Color.BLACK);
                 root.getChildren().add(this.cells[i][j].figure);
             }
         }
