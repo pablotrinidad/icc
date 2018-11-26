@@ -2,18 +2,11 @@ package simulations;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.geometry.Insets;
+import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import simulations.seismic.SeismicAutomata;
-
 
 /*
 * Simulation
@@ -38,10 +31,16 @@ public abstract class Simulation {
     private int height = 1000;
     private Cell[][] cells;
 
+    // Historical data (plot data)
+    private int data[][];
+    private int currentTime;
+
     public Simulation(int n, int t, int s) {
         this.n = n;
         this.t = t;
         this.s = s;
+        this.data = new int[this.n][2];
+        this.currentTime = 0;
     }
 
     // Run simulation and plotting
@@ -49,6 +48,8 @@ public abstract class Simulation {
         this.setupUI(window);
 
         this.runSimulation();
+
+        // this.plotSimulationData();
     }
 
     // Run simulation t times
@@ -58,12 +59,28 @@ public abstract class Simulation {
                 (e) -> {
                     for (int i = 0; i < this.n; i++) {
                         for (int j = 0; j < this.n; j++)
-                            this.cells[i][j].updateState();  // Send time t
+                            this.updateData(this.cells[i][j].updateState());
                     }
+                    this.currentTime += 1;
                 }
                 ));
         timeline.setCycleCount(this.t);
         timeline.play();
+    }
+
+    // Update simulation data
+    private void updateData(boolean critic) {
+        if (critic) {
+            this.data[this.currentTime][0] += 1;  // First element of each data point is critic count
+        } else {
+            this.data[this.currentTime][1] += 1; // Second is normal state count
+        }
+    }
+
+    // Plot simulation data
+    private void plotSimulationData() {
+        Plot plot = new Plot(this.t, this.n, this.data, this.name);
+        plot.display();
     }
 
     // Setup UI

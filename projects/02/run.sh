@@ -19,10 +19,18 @@ cd $SRC_DIRECTORY
 
 # Compile application
 echo "Compiling application..."
-javac --module-path $JAVAFX_PATH --add-modules=javafx.controls $PACKAGE_NAME/*.java
+javac \
+    --module-path $JAVAFX_PATH \
+    --add-modules=javafx.controls \
+    --add-exports=javafx.base/com.sun.javafx.collections=ALL-UNNAMED \
+    $PACKAGE_NAME/*.java
 
 echo "Starting application..."
 # Run application
-java --module-path $JAVAFX_PATH --add-modules=javafx.controls $PACKAGE_NAME.$MAIN_CLASS
+java \
+    --module-path $JAVAFX_PATH \
+    --add-modules=javafx.controls \
+    --add-exports=javafx.base/com.sun.javafx.collections=ALL-UNNAMED \
+    $PACKAGE_NAME.$MAIN_CLASS
 
 cd ..

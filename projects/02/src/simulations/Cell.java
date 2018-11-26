@@ -29,10 +29,7 @@ public abstract class Cell {
     }
 
     // For simulations that doesn't require to explicitly know the time
-    public abstract void updateState();
-
-    // For simulations that require to know the value of t
-    public abstract void updateState(int t);
+    public abstract boolean updateState();
 
     @Override
     public String toString() {

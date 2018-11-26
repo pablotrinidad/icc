@@ -17,7 +17,7 @@ public class SeismicAutomata extends Cell {
         this.updateColor();
     }
 
-    public void updateState() {
+    public boolean updateState() {
         // If cell reached threshold in past t-1, decrease state by 4
         if (this.state == threshold) {
             this.state -= 4;
@@ -36,9 +36,10 @@ public class SeismicAutomata extends Cell {
             this.state += 1;
         }
         this.updateColor();
-    }
 
-    public void updateState(int t) { this.updateState(); }
+        // Return true if stated is critic
+        return this.state == this.threshold;
+    }
 
     // Update cell color (heat map)
     private void updateColor() {
