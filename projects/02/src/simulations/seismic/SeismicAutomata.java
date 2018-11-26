@@ -11,6 +11,8 @@ public class SeismicAutomata extends Cell {
     public SeismicAutomata(int threshold) {
         super();
         this.threshold = threshold;
+
+        // Initialize cell state with a value between 0 (inclusive) and threshold (exclusive)
         this.state = this.prng.nextInt(threshold);
         this.updateColor();
     }
@@ -19,32 +21,30 @@ public class SeismicAutomata extends Cell {
         // If cell reached threshold in past t-1, decrease state by 4
         if (this.state == threshold) {
             this.state -= 4;
-        } else {
-            int increment = 0;
-            for(int k = 0; k < 4; k++) {
-                SeismicAutomata neighbour = this.neighbours[k];
-                if(neighbour == null) {
-                    break;
-                } else if (neighbour.state == threshold) {
-                    increment += 1;
-                }
-            }
-            // If one or more neighbour cells reached threshold in t-1,
-            // increase the state by the amount of neighbours in that
-            // state, else increment by one.
-            this.state += increment > 0 ? increment : 1;
 
-            // If value exceeded threshold because of neighbours,
-            // round state back to threshold
-            this.state = threshold;
+            // Update neighbors
+            for (int k = 0; k < 4; k++) {
+                // If cell doesn't have more neighbors
+                if(this.neighbours[k] == null) {
+                    break;
+                }
+
+                // Increment neighbor state by 0 without exceeding threshold
+                this.neighbours[k].state += this.neighbours[k].state < threshold ? 1 : 0;
+            }
+        } else {
+            this.state += 1;
         }
         this.updateColor();
     }
 
     public void updateState(int t) { this.updateState(); }
 
-    public void updateColor() {
-        int red = ((this.state - 1) / (this.threshold - 1)) * 255;
-        this.figure.setFill(Color.rgb(this.prng.nextInt(256), 0, 0));
+    // Update cell color (heat map)
+    private void updateColor() {
+        double hue = Color.BLUE.getHue() + (Color.RED.getHue() - Color.BLUE.getHue()) * (this.state) / (this.threshold);
+        Color color = Color.hsb(hue, 1.0, 1.0);
+        // As the state approaches the threshold, the cell color turn more and more reddish
+        this.figure.setFill(color);
     }
 }

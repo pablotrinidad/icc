@@ -31,12 +31,14 @@ public class Main extends Application {
         int t = this.in.nextInt();
         System.out.println("¿Cuántas celdas quieres por lado?");
         int n = this.in.nextInt();
+        System.out.println("¿Cuántos milisegundos quieres que dure cada paso temporal?");
+        int s = this.in.nextInt();
         Simulation simulation;
         switch (option) {
             case 1:
                 System.out.println("Ingresa el valor umbral");
                 int threshold  = this.in.nextInt();
-                simulation = new SeismicActivitySimulation(n, t, threshold);
+                simulation = new SeismicActivitySimulation(n, t, s, threshold);
                 simulation.run(this.window);
                 break;
             default:

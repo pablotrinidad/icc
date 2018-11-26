@@ -15,6 +15,7 @@ public abstract class Cell {
 
     // Automata data
     protected int state;
+    protected Cell neighbors[] = new Cell[4];
 
     // Auxiliaries
     protected Random prng; // Pseudo-random number generator
