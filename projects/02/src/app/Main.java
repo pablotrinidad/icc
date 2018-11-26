@@ -1,18 +1,18 @@
 package app;
 
-import automatas.seismic.SeismicActivity;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import simulations.Simulation;
+import simulations.seismic.SeismicActivitySimulation;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main extends Application {
 
-    private Scanner in;
+    private Scanner in = new Scanner(System.in);
+    private Stage window;
 
-    public Main () {
-        this.in = new Scanner(System.in);
-    }
-
-    public void start () {
+    public void start (Stage window) throws Exception {
         System.out.println("================================");
         System.out.println("ICC - Proyecto 2 (Autómatas)");
         System.out.println("================================");
@@ -22,21 +22,22 @@ public class Main {
         System.out.println("\t[3] Incendios forestales");
 
         int option = this.parseInput();
+        this.window = window;
         this.runSimulation(option);
     }
 
-    private void runSimulation(int option) {
+    private void runSimulation(int option) throws Exception {
         System.out.println("¿Por cuántos pasos temporales deseas correr la simulación?");
         int t = this.in.nextInt();
-        System.out.println("¿Cuántas unidades de largo medirán los lados de la malla (cuadrada)?");
+        System.out.println("¿Cuántas celdas quieres por lado?");
         int n = this.in.nextInt();
+        Simulation simulation;
         switch (option) {
             case 1:
                 System.out.println("Ingresa el valor umbral");
                 int threshold  = this.in.nextInt();
-                SeismicActivity simulation = new SeismicActivity(threshold, t, n);
-                simulation.start();
-                simulation.plot();
+                simulation = new SeismicActivitySimulation(n, t, threshold);
+                simulation.run(this.window);
                 break;
             default:
                 System.out.println(option);
@@ -58,8 +59,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main app = new Main();
-        app.start();
+        launch(args);
     }
 
 }
