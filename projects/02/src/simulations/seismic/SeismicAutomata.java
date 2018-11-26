@@ -21,25 +21,33 @@ public class SeismicAutomata extends Cell {
         // If cell reached threshold in past t-1, decrease state by 4
         if (this.state == threshold) {
             this.state -= 4;
-
+        } else {
+            int increment = 0;
             // Update neighbors
             for (int k = 0; k < 4; k++) {
                 // If cell doesn't have more neighbors
                 if(this.neighbours[k] == null) {
                     break;
                 }
+                increment += this.neighbours[k].isCritic() ? 1 : 0;
 
-                // Increment neighbor state by 0 without exceeding threshold
-                this.neighbours[k].state += this.neighbours[k].state < threshold ? 1 : 0;
             }
-        } else {
-            this.state += 1;
+            // If neighbors were critic
+            this.state += increment > 0 ? increment : 1;
+
+            // Ensures state is not greater than threshold
+            this.state = this.state > this.threshold ? this.threshold : this.state;
         }
         this.updateColor();
 
         // Return true if stated is critic
         return this.state == this.threshold;
     }
+
+    public boolean isCritic() {
+        return this.state == this.threshold;
+    }
+
 
     // Update cell color (heat map)
     private void updateColor() {

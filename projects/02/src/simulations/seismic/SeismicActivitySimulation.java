@@ -15,7 +15,7 @@ public class SeismicActivitySimulation extends Simulation {
         this.threshold = threshold;
     }
 
-    public Cell[][] createAutomatas() {
+    public SeismicAutomata[][] createAutomatas() {
         SeismicAutomata cells[][] = new SeismicAutomata[this.n][this.n];
         for (int i = 0; i < this.n; i ++) {
             for (int j = 0; j < this.n; j++) {

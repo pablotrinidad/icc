@@ -39,7 +39,7 @@ public abstract class Simulation {
         this.n = n;
         this.t = t;
         this.s = s;
-        this.data = new int[this.n][2];
+        this.data = new int[this.t + 1][2];
         this.currentTime = 0;
     }
 
@@ -48,8 +48,6 @@ public abstract class Simulation {
         this.setupUI(window);
 
         this.runSimulation();
-
-        // this.plotSimulationData();
     }
 
     // Run simulation t times
@@ -66,6 +64,7 @@ public abstract class Simulation {
                 ));
         timeline.setCycleCount(this.t);
         timeline.play();
+        timeline.setOnFinished(e -> this.plotSimulationData());
     }
 
     // Update simulation data
@@ -79,7 +78,7 @@ public abstract class Simulation {
 
     // Plot simulation data
     private void plotSimulationData() {
-        Plot plot = new Plot(this.t, this.n, this.data, this.name);
+        Plot plot = new Plot(this.t + 1, this.n, this.data, this.name);
         plot.display();
     }
 
@@ -99,8 +98,11 @@ public abstract class Simulation {
                 this.cells[i][j].figure.setWidth(w);
                 this.cells[i][j].figure.setHeight(w);
                 root.getChildren().add(this.cells[i][j].figure);
+                this.updateData(this.cells[i][j].isCritic());
             }
         }
+
+        this.currentTime += 1;
 
         window.setTitle(this.name);
         Scene scene = new Scene(root, this.width, this.height);

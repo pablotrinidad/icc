@@ -31,6 +31,9 @@ public abstract class Cell {
     // For simulations that doesn't require to explicitly know the time
     public abstract boolean updateState();
 
+    // Return boolean indicating if state is critic
+    public abstract boolean isCritic();
+
     @Override
     public String toString() {
         return Integer.toString(this.state);
