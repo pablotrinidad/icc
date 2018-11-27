@@ -17,6 +17,12 @@ fi
 # Move to the source code folder
 cd $SRC_DIRECTORY
 
+# Deletre compiled files
+rm ./*.class
+rm ./app/*.class
+rm ./simulations/*.class
+rm ./simulations/seismic/*.class
+
 # Compile application
 echo "Compiling application..."
 javac \

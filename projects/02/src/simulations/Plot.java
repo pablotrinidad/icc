@@ -34,7 +34,7 @@ public class Plot {
         yAxis.setLabel("Estado crítico VS normal (%)");
 
         // Create chart
-        final LineChart<Number,Number> lineChart = new LineChart<>(xAxis, yAxis);
+        final LineChart<Number,Number> lineChart = new LineChart<Number,Number>(xAxis, yAxis);
         lineChart.setTitle("Simulación de actividad sísmica");
         lineChart.setCreateSymbols(false);
 
