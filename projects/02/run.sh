@@ -21,7 +21,7 @@ cd $SRC_DIRECTORY
 rm ./*.class
 rm ./app/*.class
 rm ./simulations/*.class
-rm ./simulations/seismic/*.class
+rm ./simulations/**/*.class
 
 # Compile application
 echo "Compiling application..."

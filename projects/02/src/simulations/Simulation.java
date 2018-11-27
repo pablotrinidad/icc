@@ -2,7 +2,6 @@ package simulations;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -29,7 +28,7 @@ public abstract class Simulation {
     // Grid attributes
     private int width = 1000;
     private int height = 1000;
-    private Cell[][] cells;
+    private Automata[][] cells;
 
     // Historical data (plot data)
     private int data[][];
@@ -51,17 +50,16 @@ public abstract class Simulation {
     }
 
     // Run simulation t times
-    final void runSimulation() {
+    private final void runSimulation() {
         Timeline timeline = new Timeline(new KeyFrame(
-                Duration.millis(this.s),
-                (e) -> {
-                    for (int i = 0; i < this.n; i++) {
-                        for (int j = 0; j < this.n; j++)
-                            this.updateData(this.cells[i][j].updateState());
-                    }
-                    this.currentTime += 1;
+            Duration.millis(this.s),
+            (e) -> {
+                for (int i = 0; i < this.n; i++) {
+                    for (int j = 0; j < this.n; j++)
+                        this.updateData(this.cells[i][j].updateState(this.currentTime));
                 }
-                ));
+                this.currentTime += 1;
+        }));
         timeline.setCycleCount(this.t);
         timeline.play();
         timeline.setOnFinished(e -> this.plotSimulationData());
@@ -111,7 +109,7 @@ public abstract class Simulation {
     }
 
     // Add cell neighbors
-    protected final void updateNeighbors(Cell[][] cells) {
+    protected final void updateNeighbors(Automata[][] cells) {
         for (int i = 0; i < this.n; i++) {
             for (int j = 0; j < this.n; j++) {
                 int[][] coordinates = {{i, i + 1, i, i - 1}, {j + 1, j, j - 1, j}};
@@ -129,5 +127,5 @@ public abstract class Simulation {
     }
 
     // Implementation is up to each simulation
-    public abstract Cell[][] createAutomatas();
+    public abstract Automata[][] createAutomatas();
 }

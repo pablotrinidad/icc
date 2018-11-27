@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import simulations.Simulation;
 import simulations.seismic.SeismicActivitySimulation;
+import simulations.wildfire.WildfireSimulation;
 
 import java.util.Scanner;
 
@@ -41,8 +42,19 @@ public class Main extends Application {
                 simulation = new SeismicActivitySimulation(n, t, s, threshold);
                 simulation.run(this.window);
                 break;
+            case 2:
+                System.out.println("Ingrese un valor entre 0 y 1 correspondiente a p");
+                double p = this.in.nextDouble();
+                System.out.println("Ingrese un valor entre 0 y 1 correspondiente a f");
+                double f = this.in.nextDouble();
+                System.out.println("Ingrese un valor entre 0 y 1 correspondiente a g");
+                double g = this.in.nextDouble();
+                simulation = new WildfireSimulation(n, t, s, p, f, g);
+                simulation.run(this.window);
+                break;
             default:
-                System.out.println(option);
+                System.out.println("INVALID OPTION!!");
+                break;
         }
     }
 

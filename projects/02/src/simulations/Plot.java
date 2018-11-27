@@ -35,7 +35,7 @@ public class Plot {
 
         // Create chart
         final LineChart<Number,Number> lineChart = new LineChart<Number,Number>(xAxis, yAxis);
-        lineChart.setTitle("Simulación de actividad sísmica");
+        lineChart.setTitle(this.name);
         lineChart.setCreateSymbols(false);
 
         // Initialize series

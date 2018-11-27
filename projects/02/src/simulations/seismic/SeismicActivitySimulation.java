@@ -1,7 +1,6 @@
 
 package simulations.seismic;
 
-import simulations.Cell;
 import simulations.Simulation;
 
 public class SeismicActivitySimulation extends Simulation {
@@ -17,7 +16,7 @@ public class SeismicActivitySimulation extends Simulation {
 
     public SeismicAutomata[][] createAutomatas() {
         SeismicAutomata cells[][] = new SeismicAutomata[this.n][this.n];
-        for (int i = 0; i < this.n; i ++) {
+        for (int i = 0; i < this.n; i++) {
             for (int j = 0; j < this.n; j++) {
                 cells[i][j] = new SeismicAutomata(this.threshold);
             }

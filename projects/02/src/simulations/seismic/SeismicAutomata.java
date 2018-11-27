@@ -1,9 +1,9 @@
 package simulations.seismic;
 
 import javafx.scene.paint.Color;
-import simulations.Cell;
+import simulations.Automata;
 
-public class SeismicAutomata extends Cell {
+public class SeismicAutomata extends Automata {
 
     private int threshold;
     private SeismicAutomata neighbours[] = new SeismicAutomata[4];
@@ -17,7 +17,7 @@ public class SeismicAutomata extends Cell {
         this.updateColor();
     }
 
-    public boolean updateState() {
+    public boolean updateState(int time) {
         // If cell reached threshold in past t-1, decrease state by 4
         if (this.state == threshold) {
             this.state -= 4;
@@ -44,13 +44,14 @@ public class SeismicAutomata extends Cell {
         return this.state == this.threshold;
     }
 
+    // Return boolean indicating if state is critic
     public boolean isCritic() {
         return this.state == this.threshold;
     }
 
 
     // Update cell color (heat map)
-    private void updateColor() {
+    public void updateColor() {
         double hue = Color.BLUE.getHue() + (Color.RED.getHue() - Color.BLUE.getHue()) * (this.state) / (this.threshold);
         Color color = Color.hsb(hue, 1.0, 1.0);
         // As the state approaches the threshold, the cell color turn more and more reddish
