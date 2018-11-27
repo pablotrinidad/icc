@@ -3,6 +3,7 @@ package app;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import simulations.Simulation;
+import simulations.outbreak.OutbreakSimulation;
 import simulations.seismic.SeismicActivitySimulation;
 import simulations.wildfire.WildfireSimulation;
 
@@ -43,6 +44,14 @@ public class Main extends Application {
                 simulation.run(this.window);
                 break;
             case 2:
+                System.out.println("Ingrese el valor correspondiente a 'a'");
+                int a = this.in.nextInt();
+                System.out.println("Ingrese el valor correspondiente a 'g'");
+                int g2 = this.in.nextInt();
+                simulation = new OutbreakSimulation(n, t, s, a, g2);
+                simulation.run(this.window);
+                break;
+            case 3:
                 System.out.println("Ingrese un valor entre 0 y 1 correspondiente a p");
                 double p = this.in.nextDouble();
                 System.out.println("Ingrese un valor entre 0 y 1 correspondiente a f");
