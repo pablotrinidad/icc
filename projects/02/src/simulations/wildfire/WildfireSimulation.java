@@ -3,6 +3,12 @@ package simulations.wildfire;
 import simulations.Automata;
 import simulations.Simulation;
 
+/*
+* Wildfire simulation
+*
+* Simulate the evolution of a wildfire over time
+*
+* */
 public class WildfireSimulation extends Simulation {
 
     // Stochastic variables

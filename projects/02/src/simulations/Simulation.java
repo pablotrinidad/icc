@@ -1,3 +1,4 @@
+
 package simulations;
 
 import javafx.animation.KeyFrame;
@@ -23,7 +24,7 @@ public abstract class Simulation {
     // Global attributes
     protected int n;  // Length of square matrix
     protected int t;  // Amount of units of time in which the simulation will run
-    protected int s;  // Amount of miliseconds each t-step takes
+    protected int s;  // Amount of milliseconds each t-step takes
 
     // Grid attributes
     private int width = 1000;

@@ -3,6 +3,12 @@ package simulations.seismic;
 
 import simulations.Simulation;
 
+/*
+* Seismic activity simulation
+*
+* Follow the evolution rules declared in the project description.
+*
+* */
 public class SeismicActivitySimulation extends Simulation {
 
     // Simulation-specific attributes

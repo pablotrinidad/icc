@@ -3,6 +3,13 @@ package simulations.seismic;
 import javafx.scene.paint.Color;
 import simulations.Automata;
 
+
+/*
+* Seismic activity automata
+*
+* Follow the evolution rules declared in the project description.
+*
+* */
 public class SeismicAutomata extends Automata {
 
     private int threshold;

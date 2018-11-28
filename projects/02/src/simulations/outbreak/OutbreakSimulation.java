@@ -3,6 +3,12 @@ package simulations.outbreak;
 import simulations.Automata;
 import simulations.Simulation;
 
+/*
+* Outbreak simulation
+*
+* Simulate the spread of a "virus" over time.
+*
+* */
 public class OutbreakSimulation extends Simulation {
 
     // Simulation attributes

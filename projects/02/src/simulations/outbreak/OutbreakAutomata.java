@@ -3,9 +3,15 @@ package simulations.outbreak;
 import javafx.scene.paint.Color;
 import simulations.Automata;
 
+/*
+* Outbreak automata
+*
+* Follow the evolution rules declared in the project description.
+*
+* */
 public class OutbreakAutomata extends Automata {
 
-    // Simulation attribures
+    // Simulation attributes
     int a;
     int g;
 
@@ -18,7 +24,6 @@ public class OutbreakAutomata extends Automata {
         this.updateColor();
     }
 
-    @Override
     public boolean updateState(int t) {
         if (this.state == 0) {  // Susceptible cell become infectious if at least one neighbor is
             boolean infectiousNeighbors = false;
@@ -41,13 +46,11 @@ public class OutbreakAutomata extends Automata {
         return this.isCritic();
     }
 
-    @Override
     public boolean isCritic() {
         // If cell is between 1 (inclusive) and a (inclusive)
         return this.state > 0 && this.state <= a;
     }
 
-    @Override
     public void updateColor() {
         Color color;
         if (this.state == 0) {  // Susceptible

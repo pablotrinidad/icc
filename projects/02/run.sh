@@ -17,8 +17,7 @@ fi
 # Move to the source code folder
 cd $SRC_DIRECTORY
 
-# Deletre compiled files
-rm ./*.class
+# Delete compiled files
 rm ./app/*.class
 rm ./simulations/*.class
 rm ./simulations/**/*.class

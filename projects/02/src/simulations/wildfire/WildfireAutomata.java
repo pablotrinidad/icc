@@ -3,6 +3,12 @@ package simulations.wildfire;
 import javafx.scene.paint.Color;
 import simulations.Automata;
 
+/*
+* Wildfire simulation
+*
+* Simulate the spread of a "virus" over time.
+*
+* */
 public class WildfireAutomata extends Automata {
 
     // Stochastic variables

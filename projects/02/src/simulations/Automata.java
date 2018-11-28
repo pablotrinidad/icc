@@ -6,11 +6,19 @@ import javafx.scene.text.Text;
 
 import java.util.Random;
 
+/*
+* Automata
+*
+* Abstract class which acts as a wrapper around each simulation-specific automata.
+* Important methods are the updateState method which handle all the logic up
+* updating an automata's state and isCritic which specify the condition upon and
+* automata is considered to be in a critic state.
+*
+* */
 public abstract class Automata {
 
     // UI Elements
     public Rectangle figure;
-    private Text text;
 
     // Automata data
     protected int state;
@@ -21,7 +29,6 @@ public abstract class Automata {
 
     public Automata() {
         this.prng = new Random();
-        this.text = new Text();
         this.figure = new Rectangle();
         this.figure.setStroke(Color.BLACK);
         this.figure.setFill(null);

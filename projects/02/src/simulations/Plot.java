@@ -7,6 +7,14 @@ import javafx.scene.chart.XYChart;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/*
+* Plot
+*
+* Receive an array containing the results of running the simulation over
+* t time-steps (plus initial state) and launch a new window displaying
+* a line chart plot.
+*
+* */
 public class Plot {
 
     // Plot data
