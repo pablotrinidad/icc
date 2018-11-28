@@ -53,11 +53,11 @@ public class OutbreakAutomata extends Automata {
 
     public void updateColor() {
         Color color;
-        if (this.state == 0) {  // Susceptible
+        if (this.state == 0) {  // Susceptible {0}
             color = Color.web("#F3A712");
-        } else if (this.state <= this.a) {  // Infected
+        } else if (this.state <= this.a) {  // Infected {1, a}
             color = Color.web("#EE6055");
-        } else {  // Immune
+        } else {  // Immune {a+1, g}
             color = Color.web("#23CE6B");
         }
         this.figure.setFill(color);

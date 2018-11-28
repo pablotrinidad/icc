@@ -48,7 +48,7 @@ public class SeismicAutomata extends Automata {
         this.updateColor();
 
         // Return true if stated is critic
-        return this.state == this.threshold;
+        return this.isCritic();
     }
 
     // Return boolean indicating if state is critic

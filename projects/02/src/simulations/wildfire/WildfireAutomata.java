@@ -48,7 +48,7 @@ public class WildfireAutomata extends Automata {
                 this.state = event < (f * (1 - g)) ? 2 : 1;
             }
         } else {  // If tree is already on fire, becomes dust :(
-            this.state = 1;
+            this.state = 0;
         }
 
         this.updateColor();
